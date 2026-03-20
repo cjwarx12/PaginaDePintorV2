@@ -1,0 +1,260 @@
+/* Estilos base personalizados */
+body {
+    background-color: #121212;
+    color: #f4f4f5;
+}
+        
+/* Efecto de desvanecimiento para imágenes */
+.image-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+.image-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ocultar scrollbar pero permitir scroll en la galería modal */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #121212; 
+}
+::-webkit-scrollbar-thumb {
+    background: #3f3f46; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #52525b; 
+}
+/* Estilo para el idioma activo */
+.lang-active { 
+    color: #ffffff; 
+    font-weight: bold; 
+}
+
+
+/* ================================================================
+   LIGHTBOX MODERNO — estilos nuevos (no tocar el resto)
+   ================================================================ */
+
+/* --- Layout principal: flex columna para que caption nunca tape la imagen --- */
+#lightbox:not(.hidden) {
+    display: flex !important;
+    flex-direction: column;
+}
+
+/* --- Barra superior --- */
+.lightbox-topbar {
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    z-index: 40;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, transparent 100%);
+}
+
+.lightbox-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.35);
+    pointer-events: none;
+}
+
+.lightbox-counter {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    pointer-events: none;
+}
+
+.lightbox-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.55);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.lightbox-close-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border-color: rgba(255,255,255,0.3);
+}
+
+/* --- Zona central: ocupa todo el espacio libre disponible --- */
+.lightbox-stage {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 80px;
+}
+
+.lightbox-img-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.lightbox-main-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+/* Animación fade al cambiar imagen */
+.lb-img--fade {
+    opacity: 0 !important;
+    transform: scale(0.975) !important;
+}
+
+/* --- Botones de navegación --- */
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.45);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.lightbox-nav-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border-color: rgba(255,255,255,0.25);
+}
+.lightbox-nav-prev {
+    left: 20px;
+}
+.lightbox-nav-prev:hover {
+    transform: translateY(-50%) translateX(-2px);
+}
+.lightbox-nav-next {
+    right: 20px;
+}
+.lightbox-nav-next:hover {
+    transform: translateY(-50%) translateX(2px);
+}
+
+@media (min-width: 768px) {
+    .lightbox-nav-prev { left: 32px; }
+    .lightbox-nav-next { right: 32px; }
+    .lightbox-stage    { padding: 8px 112px; }
+}
+
+/* --- Caption: fuera del flujo absoluto, siempre debajo de la imagen --- */
+.lightbox-caption-bar {
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 10px 24px 6px;
+    pointer-events: none;
+}
+
+.lightbox-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+    margin: 0 0 4px;
+}
+
+.lightbox-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(212,212,216,0.55);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* --- Filmstrip: fuera del flujo absoluto, siempre al fondo --- */
+.lightbox-filmstrip-wrap {
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+    padding: 8px 24px 16px;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+}
+
+.lightbox-filmstrip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 2px;
+}
+.lightbox-filmstrip::-webkit-scrollbar {
+    display: none;
+}
+
+.lb-thumb {
+    flex-shrink: 0;
+    width: 52px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 2px;
+    opacity: 0.35;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.lb-thumb:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+.lb-thumb--active {
+    opacity: 1 !important;
+    border-color: #8c7e6a;
+    transform: translateY(-3px) scale(1.06);
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 480px) {
+    .lightbox-nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+    .lightbox-nav-prev { left: 8px; }
+    .lightbox-nav-next { right: 8px; }
+    .lightbox-stage    { padding: 8px 60px; }
+    .lb-thumb          { width: 42px; height: 32px; }
+}

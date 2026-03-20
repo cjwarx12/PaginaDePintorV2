@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="CarlosOrellana | Artista Plástico">
+        <meta property="og:description" content="Explorando la condición humana a través del expresionismo abstracto.">
+        <meta property="og:image" content="URL_DE_UNA_IMAGEN_REPRESENTATIVA_AQUI.jpg">
+        <meta property="og:url" content="https://www.tudominio.com">
+        <link rel="stylesheet"   href="styles.css"/>
+        
+        <!-- Tailwind CSS para los estilos modernos y responsivos -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+        <!-- Iconos Lucide -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+        <title>Carlos Orellana | Artista Plástico</title>
+
+    </head>
+
+    
+    <body class="font-sans antialiased selection:bg-sober-accent selection:text-white">
+
+    <!-- Navegación -->
+    <nav id="navbar" class="fixed w-full z-[60] transition-all duration-300 bg-transparent py-4">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+            <a href="#inicio" class="font-serif text-2xl font-semibold tracking-wider text-white">Carlos Orellana</a>
+            
+            <!-- Menú Escritorio -->
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-sober-300">
+                <a href="#biografia" class="hover:text-white transition-colors duration-200" data-i18n="nav_bio">Biografía</a>
+                <a href="#obras" class="hover:text-white transition-colors duration-200" data-i18n="nav_obras">Obras</a>
+                <a href="#exposiciones" class="hover:text-white transition-colors duration-200" data-i18n="nav_expo">Exposiciones</a>
+            </div>
+
+            <!-- Controles Derecha: Idioma + Menú Móvil -->
+            <div class="flex items-center space-x-4 md:space-x-0">
+                <!-- Selector de Idioma -->
+                <div class="text-sober-300 text-xs md:text-sm tracking-widest flex space-x-2 md:ml-8 items-center bg-black/20 md:bg-transparent px-3 py-1.5 rounded-full border border-white/10 md:border-none">
+                    <button onclick="changeLanguage('es')" id="btn-es" class="hover:text-white transition-colors lang-active">ES</button>
+                    <span class="opacity-30">|</span>
+                    <button onclick="changeLanguage('en')" id="btn-en" class="hover:text-white transition-colors">EN</button>
+                    <span class="opacity-30">|</span>
+                    <button onclick="changeLanguage('it')" id="btn-it" class="hover:text-white transition-colors">IT</button>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <button class="md:hidden text-white focus:outline-none relative p-2 -mr-2" id="mobile-menu-btn" aria-label="Menú">
+                    <i data-lucide="menu" id="icon-menu"></i>
+                    <i data-lucide="x" id="icon-close" class="hidden"></i>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Menú Móvil Desplegable (Pantalla completa para mejor UX táctil) -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-sober-900/98 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 text-lg uppercase tracking-widest text-sober-300 opacity-0 pointer-events-none transition-opacity duration-300">
+        <a href="#biografia" class="hover:text-white transition-colors duration-200 mobile-link p-4" data-i18n="nav_bio">Biografía</a>
+        <a href="#obras" class="hover:text-white transition-colors duration-200 mobile-link p-4" data-i18n="nav_obras">Obras</a>
+        <a href="#exposiciones" class="hover:text-white transition-colors duration-200 mobile-link p-4" data-i18n="nav_expo">Exposiciones</a>
+    </div>
+
+    <!-- Sección Inicio (Hero) -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Imagen de fondo -->
+        <div class="absolute inset-0 z-0">
+            <img src="img/FondoPintor.jpg" alt="Estudio de arte" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sober-900/50 to-sober-900"></div>
+        </div>
+        
+        <!-- Contenido -->
+        <div class="relative z-10 text-center px-4">
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-white">
+                Carlos Orellana
+            </h1>
+            <p class="text-sober-300 text-lg md:text-xl font-light tracking-wide max-w-2xl mx-auto" data-i18n="hero_desc">
+                Explorando la condición humana a través del expresionismo abstracto y el contraste tonal.
+            </p>
+            <div class="mt-12">
+                <a href="#obras" class="inline-block border border-sober-accent/50 text-sober-100 hover:bg-sober-accent hover:border-sober-accent transition-all duration-300 px-8 py-3 text-sm uppercase tracking-widest rounded-sm" data-i18n="hero_btn">
+                    Ver Colección
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Biografía -->
+    <section id="biografia" class="py-24 bg-sober-900">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row gap-12 lg:gap-16 items-center">
+                
+                <!-- Retrato -->
+                <div class="w-full md:w-1/2 lg:w-5/12 relative max-w-md mx-auto md:max-w-none">
+                    <div class="aspect-[3/4] overflow-hidden relative group rounded-sm">
+                        <img src="img/Pintor.png" alt="Retrato del Pintor" loading="lazy" class="w-full h-full object-cover grayscale md:hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 ring-1 ring-inset ring-white/10"></div>
+                    </div>
+                    <!-- Decoración -->
+                    <div class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-sober-800 -z-10 rounded-sm"></div>
+                </div>
+
+                <!-- Texto -->
+                <div class="w-full md:w-1/2 lg:w-7/12 mt-8 md:mt-0">
+                    <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6 md:mb-8 border-l-4 border-sober-accent pl-4 md:pl-6" data-i18n="bio_title">El Artista</h2>
+                    <div class="space-y-6 text-sober-300 font-light leading-relaxed text-base md:text-lg">
+                        
+                        <h3 class="text-xl md:text-2xl text-white font-serif mb-2" data-i18n="bio_subtitle">
+                            Carlos Orellana — La Energía del Abstraccionismo Contemporáneo
+                        </h3>
+                        
+                        <blockquote class="pl-6 border-l-2 border-sober-accent/50 italic text-sober-100" data-i18n="bio_quote">
+                            "El arte abstracto no se observa, se siente. Es un diálogo silencioso entre la materia, el color y la emoción."
+                        </blockquote>
+                        
+                        <!-- Contenedor Tabulado -->
+                        <div class="pl-6 md:pl-8 space-y-5 border-l border-white/5">
+                            <p data-i18n="bio_p1">
+                                Carlos Orellana, pintor de arte abstracto originario de El Salvador y actualmente residente en Busto Arsizio, Italia, desarrolla una propuesta artística que fusiona la intensidad del expresionismo con la fuerza visual del street art contemporáneo. Su obra nace del movimiento, del gesto libre y de la necesidad de transformar la experiencia humana en lenguaje plástico.
+                            </p>
+                            <p data-i18n="bio_p2">
+                                Cada una de sus composiciones es un espacio abierto: líneas que se cruzan como rutas de pensamiento, capas de color que evocan memoria, energía y transformación. En su trabajo no existen formas cerradas, sino vibraciones visuales que invitan al espectador a interpretar, descubrir y sentir desde su propia sensibilidad.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Obras (Galería) -->
+    <section id="obras" class="py-24 bg-sober-800">
+        <div class="container mx-auto px-6 lg:px-12 text-center mb-12 md:mb-16">
+            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-4" data-i18n="works_title">Obras Selectas</h2>
+            <p class="text-sober-300 font-light max-w-xl mx-auto text-sm md:text-base" data-i18n="works_desc">Un recorrido visual por las piezas más representativas.</p>
+        </div>
+
+        <!-- Grid de Galería -->
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+                
+                <!-- Obra 1 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (10).jpg" alt="Melancolía en Rojo" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Melancolía en Rojo</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2021</p>
+                    </div>
+                </div>
+
+                <!-- Obra 2 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (13).jpg" alt="Fragmentos del Ser" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Fragmentos del Ser</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Técnica mixta, 2022</p>
+                    </div>
+                </div>
+
+                <!-- Obra 3 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (3).jpg" alt="Ecos de la Memoria" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Ecos de la Memoria</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Acrílico, 2019</p>
+                    </div>
+                </div>
+
+                <!-- Obra 4 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (4).jpg" alt="Abismo Geométrico" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Abismo Geométrico</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre madera, 2023</p>
+                    </div>
+                </div>
+
+                <!-- Obra 5 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (5).jpg" alt="Silencio Dorado" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Silencio Dorado</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Textura y pan de oro, 2020</p>
+                    </div>
+                </div>
+
+                <!-- Obra 6 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                    </div>
+                </div>
+
+                <!-- Obra 7 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                    </div>
+                </div>
+
+                <!-- Obra 8 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                    </div>
+                </div>
+
+                <!-- Obra 9 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                    </div>
+                </div>
+
+                <!-- Obra 10 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                    </div>
+                </div>
+
+                <!-- Obra 11 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                    </div>
+                </div>
+
+                <!-- Obra 12 -->
+                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
+                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
+                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- LIGHTBOX MODERNO — única sección modificada                  -->
+    <!-- ============================================================ -->
+    <div id="lightbox" class="fixed inset-0 z-[70] hidden opacity-0" style="background: rgba(4,4,4,0.97); transition: opacity 0.35s ease;">
+
+        <!-- Barra superior -->
+        <div class="lightbox-topbar">
+            <span class="lightbox-brand">Carlos Orellana</span>
+            <span id="lightbox-counter" class="lightbox-counter"></span>
+            <button onclick="closeLightbox()" class="lightbox-close-btn" aria-label="Cerrar">
+                <i data-lucide="x" style="width:20px;height:20px;"></i>
+            </button>
+        </div>
+
+        <!-- Zona central: botón prev + imagen + botón next -->
+        <div class="lightbox-stage">
+
+            <button onclick="prevImage(event)" class="lightbox-nav-btn lightbox-nav-prev" aria-label="Anterior">
+                <i data-lucide="chevron-left" style="width:28px;height:28px;"></i>
+            </button>
+
+            <!-- Imagen principal -->
+            <div class="lightbox-img-wrapper">
+                <img id="lightbox-img" src="" alt="Obra ampliada" class="lightbox-main-img">
+            </div>
+
+            <button onclick="nextImage(event)" class="lightbox-nav-btn lightbox-nav-next" aria-label="Siguiente">
+                <i data-lucide="chevron-right" style="width:28px;height:28px;"></i>
+            </button>
+
+        </div>
+
+        <!-- Caption (título + descripción) -->
+        <div class="lightbox-caption-bar">
+            <h3 id="lightbox-title" class="lightbox-title"></h3>
+            <p  id="lightbox-desc"  class="lightbox-desc"></p>
+        </div>
+
+        <!-- Tira de miniaturas -->
+        <div class="lightbox-filmstrip-wrap">
+            <div id="lightbox-thumbnails" class="lightbox-filmstrip"></div>
+        </div>
+
+    </div>
+    <!-- ============================================================ -->
+
+    <!-- Sección Exposiciones -->
+    <section id="exposiciones" class="py-24 bg-sober-900">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-serif text-3xl md:text-5xl text-white mb-16 text-center" data-i18n="expo_title">Exposiciones Destacadas</h2>
+                
+                <div class="space-y-16 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-sober-800 before:to-transparent">
+                    
+                    <!-- Item 1 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-sober-900 group-hover:bg-white transition-colors duration-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
+                            <div class="w-2 h-2 rounded-full bg-white group-hover:bg-sober-900 transition-colors"></div>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:text-right">
+                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest">2025</span>
+                            <h3 class="font-serif text-2xl text-white mt-1 mb-2">Ecos del Subconsciente</h3>
+                            <p class="text-sober-300 font-light text-sm mb-4" data-i18n="expo_1">Rorarte, Italia. (Exposición Individual)</p>
+                            <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
+                                <img src="img/Carlos Orellana (11).jpg" alt="" class="h-28 w-44 sm:h-36 sm:w-56 object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105">
+                                <div class="hidden">
+                                    <h3>Ecos del Subconsciente</h3>
+                                    <p>Exposición Individual, Italia (2025)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-sober-800 bg-sober-900 group-hover:border-white transition-colors duration-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
+                            <div class="w-2 h-2 rounded-full bg-sober-800 group-hover:bg-white transition-colors"></div>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:text-right">
+                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest">2025</span>
+                            <h3 class="font-serif text-2xl text-white mt-1 mb-2">Bienal de las Sombras</h3>
+                            <p class="text-sober-300 font-light text-sm mb-4" data-i18n="expo_2">Richmond TW9 LHP, United Kingdom. (Exposición Colectiva)</p>
+                            <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
+                                <img src="img/Carlos Orellana (12).jpg" alt="" class="h-28 w-44 sm:h-36 sm:w-56 object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105">
+                                <div class="hidden">
+                                    <h3>Bienal de las Sombras</h3>
+                                    <p>Exposición Colectiva, United Kingdom (2025)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-sober-800 bg-sober-900 group-hover:border-white transition-colors duration-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
+                            <div class="w-2 h-2 rounded-full bg-sober-800 group-hover:bg-white transition-colors"></div>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:text-right">
+                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest">2019</span>
+                            <h3 class="font-serif text-2xl text-white mt-1 mb-2">Transiciones</h3>
+                            <p class="text-sober-300 font-light text-sm mb-4" data-i18n="expo_3">Art Basel, Italia. (Feria de Arte)</p>
+                            <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
+                                <img src="img/Carlos Orellana (27).jpg" alt="" class="h-28 w-44 sm:h-36 sm:w-56 object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105">
+                                <div class="hidden">
+                                    <h3>Transiciones</h3>
+                                    <p>Feria de Arte, Italia (2019)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-sober-800 bg-sober-900 group-hover:border-white transition-colors duration-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
+                            <div class="w-2 h-2 rounded-full bg-sober-800 group-hover:bg-white transition-colors"></div>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:text-right">
+                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest">2015</span>
+                            <h3 class="font-serif text-2xl text-white mt-1 mb-2">Primeros Trazos</h3>
+                            <p class="text-sober-300 font-light text-sm mb-4">Galería Nacional, San Salvador, El Salvador. (Exposición Revelación)</p>
+                            <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
+                                <img src="img/Carlos Orellana (34).jpg" alt="" class="h-28 w-44 sm:h-36 sm:w-56 object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105">
+                                <div class="hidden">
+                                    <h3>Primeros Trazos</h3>
+                                    <p>Exposición Revelación, El Salvador (2015)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a0a] border-t border-sober-800 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="font-serif text-2xl mb-6 text-white tracking-widest">Carlos Orellana</div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-sober-300 hover:text-white transition-colors">
+                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="text-sober-300 hover:text-white transition-colors">
+                    <i data-lucide="twitter" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="text-sober-300 hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+            </div>
+            <p class="text-sober-300/50 text-sm font-light">
+                &copy; <span id="year"></span> Ing. Christian Rodas--Artista: Carlos Orellana. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+        
+    </body>
+    <script src="script.js"></script>
+
+</html>
