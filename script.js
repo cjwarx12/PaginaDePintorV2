@@ -19,26 +19,20 @@ tailwind.config = {
     }
 }
 
-//-- Lógica JavaScript --//
-
 lucide.createIcons();
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* --- DICCIONARIO DE TRADUCCIÓN COMPLETO --- */
+/* --- DICCIONARIO DE TRADUCCIÓN --- */
 const translations = {
     es: {
-        nav_bio: "Biografía",
-        nav_obras: "Obras",
-        nav_expo: "Exposiciones",
+        nav_bio: "Biografía", nav_obras: "Obras", nav_expo: "Exposiciones",
         hero_desc: "Explorando la condición humana a través del expresionismo abstracto y el contraste tonal.",
-        hero_btn: "Ver Colección",
-        bio_title: "El Artista",
+        hero_btn: "Ver Colección", bio_title: "El Artista",
         bio_subtitle: "Carlos Orellana — La Energía del Abstraccionismo Contemporáneo",
         bio_quote: "\"El arte abstracto no se observa, se siente. Es un diálogo silencioso entre la materia, el color y la emoción.\"",
         bio_p1: "Carlos Orellana, pintor de arte abstracto originario de El Salvador y actualmente residente en Busto Arsizio, Italia, desarrolla una propuesta artística que fusiona la intensidad del expresionismo con la fuerza visual del street art contemporáneo. Su obra nace del movimiento, del gesto libre y de la necesidad de transformar la experiencia humana en lenguaje plástico.",
         bio_p2: "Cada una de sus composiciones es un espacio abierto: líneas que se cruzan como rutas de pensamiento, capas de color que evocan memoria, energía y transformación. En su trabajo no existen formas cerradas, sino vibraciones visuales que invitan al espectador a interpretar, descubrir y sentir desde su propia sensibilidad.",
-        works_title: "Obras Selectas",
-        works_desc: "Un recorrido visual por las piezas más representativas de la última década.",
+        works_title: "Obras Selectas", works_desc: "Un recorrido visual por las piezas más representativas de la última década.",
         expo_title: "Exposiciones Destacadas",
         expo_1: "Galería de Arte Contemporáneo, Madrid, España. (Exposición Individual)",
         expo_2: "Museo de Arte Moderno, Ciudad de México. (Exposición Colectiva)",
@@ -47,18 +41,14 @@ const translations = {
         footer_rights: "Todos los derechos reservados."
     },
     en: {
-        nav_bio: "Biography",
-        nav_obras: "Artworks",
-        nav_expo: "Exhibitions",
+        nav_bio: "Biography", nav_obras: "Artworks", nav_expo: "Exhibitions",
         hero_desc: "Exploring the human condition through abstract expressionism and tonal contrast.",
-        hero_btn: "View Collection",
-        bio_title: "The Artist",
+        hero_btn: "View Collection", bio_title: "The Artist",
         bio_subtitle: "Carlos Orellana — The Energy of Contemporary Abstractionism",
         bio_quote: "\"Abstract art is not observed, it is felt. It is a silent dialogue between matter, color, and emotion.\"",
         bio_p1: "Carlos Orellana, an abstract painter originally from El Salvador and currently living in Busto Arsizio, Italy, develops an artistic proposal that merges the intensity of expressionism with the visual force of contemporary street art. His work is born from movement, free gesture, and the need to transform human experience into a visual language.",
         bio_p2: "Each of his compositions is an open space: lines that cross like paths of thought, layers of color that evoke memory, energy, and transformation. In his work, there are no closed forms, but visual vibrations that invite the viewer to interpret, discover, and feel from their own sensitivity.",
-        works_title: "Selected Artworks",
-        works_desc: "A visual journey through the most representative pieces of the last decade.",
+        works_title: "Selected Artworks", works_desc: "A visual journey through the most representative pieces of the last decade.",
         expo_title: "Featured Exhibitions",
         expo_1: "Contemporary Art Gallery, Madrid, Spain. (Solo Exhibition)",
         expo_2: "Museum of Modern Art, Mexico City. (Collective Exhibition)",
@@ -67,18 +57,14 @@ const translations = {
         footer_rights: "All rights reserved."
     },
     it: {
-        nav_bio: "Biografia",
-        nav_obras: "Opere",
-        nav_expo: "Mostre",
+        nav_bio: "Biografia", nav_obras: "Opere", nav_expo: "Mostre",
         hero_desc: "Esplorando la condizione umana attraverso l'espressionismo astratto e il contrasto tonale.",
-        hero_btn: "Vedi Collezione",
-        bio_title: "L'Artista",
+        hero_btn: "Vedi Collezione", bio_title: "L'Artista",
         bio_subtitle: "Carlos Orellana — L'Energia dell'Astrattismo Contemporaneo",
         bio_quote: "\"L'arte astratta non si osserva, si sente. È un dialogo silenzioso tra materia, colore ed emozione.\"",
         bio_p1: "Carlos Orellana, pittore di arte astratta originario di El Salvador e attualmente residente a Busto Arsizio, in Italia, sviluppa una proposta artistica che fonde l'intensità dell'espressionismo con la forza visiva della street art contemporanea. Il suo lavoro nasce dal movimento, dal gesto libero e dalla necessità di trasformare l'esperienza umana in linguaggio visivo.",
         bio_p2: "Ognuna delle sue composizioni è uno spazio aperto: linee che si incrociano come percorsi di pensiero, strati di colore che evocano memoria, energia e trasformazione. Nel suo lavoro non esistono forme chiuse, ma vibrazioni visive che invitano lo spettatore a interpretare, scoprire e sentire a partire dalla propria sensibilità.",
-        works_title: "Opere Selezionate",
-        works_desc: "Un viaggio visivo attraverso le opere più rappresentative dell'ultimo decennio.",
+        works_title: "Opere Selezionate", works_desc: "Un viaggio visivo attraverso le opere più rappresentative dell'ultimo decennio.",
         expo_title: "Mostre in Evidenza",
         expo_1: "Galleria d'Arte Contemporanea, Madrid, Spagna. (Mostra Personale)",
         expo_2: "Museo d'Arte Moderna, Città del Messico. (Mostra Collettiva)",
@@ -88,37 +74,30 @@ const translations = {
     }
 };
 
-/* Función para cambiar el idioma */
 function changeLanguage(lang) {
-    const elementsToTranslate = document.querySelectorAll('[data-i18n]');
-    elementsToTranslate.forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            element.innerText = translations[lang][key];
-        }
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang]?.[key]) el.innerText = translations[lang][key];
     });
-    document.getElementById('btn-es').classList.remove('lang-active');
-    document.getElementById('btn-en').classList.remove('lang-active');
-    document.getElementById('btn-it').classList.remove('lang-active');
+    ['es','en','it'].forEach(l => document.getElementById(`btn-${l}`).classList.remove('lang-active'));
     document.getElementById(`btn-${lang}`).classList.add('lang-active');
 }
 
-/* --- Navegación scroll --- */
+/* --- Navbar scroll --- */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        navbar.classList.remove('bg-transparent', 'py-4');
-        navbar.classList.add('bg-sober-900/95', 'backdrop-blur-md', 'py-3', 'shadow-lg', 'border-b', 'border-white/5');
+        navbar.classList.remove('bg-transparent','py-4');
+        navbar.classList.add('bg-sober-900/95','backdrop-blur-md','py-3','shadow-lg','border-b','border-white/5');
     } else {
-        navbar.classList.add('bg-transparent', 'py-4');
-        navbar.classList.remove('bg-sober-900/95', 'backdrop-blur-md', 'py-3', 'shadow-lg', 'border-b', 'border-white/5');
+        navbar.classList.add('bg-transparent','py-4');
+        navbar.classList.remove('bg-sober-900/95','backdrop-blur-md','py-3','shadow-lg','border-b','border-white/5');
     }
 });
 
 /* --- Menú móvil --- */
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu    = document.getElementById('mobile-menu');
-const mobileLinks   = document.querySelectorAll('.mobile-link');
 let isMenuOpen = false;
 
 function toggleMobileMenu() {
@@ -126,26 +105,61 @@ function toggleMobileMenu() {
     const iconMenu  = document.getElementById('icon-menu');
     const iconClose = document.getElementById('icon-close');
     if (isMenuOpen) {
-        mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-        mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
-        if (iconMenu)  iconMenu.classList.add('hidden');
-        if (iconClose) iconClose.classList.remove('hidden');
+        mobileMenu.classList.remove('opacity-0','pointer-events-none');
+        mobileMenu.classList.add('opacity-100','pointer-events-auto');
+        iconMenu?.classList.add('hidden');
+        iconClose?.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
     } else {
-        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-        mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
-        if (iconMenu)  iconMenu.classList.remove('hidden');
-        if (iconClose) iconClose.classList.add('hidden');
+        mobileMenu.classList.add('opacity-0','pointer-events-none');
+        mobileMenu.classList.remove('opacity-100','pointer-events-auto');
+        iconMenu?.classList.remove('hidden');
+        iconClose?.classList.add('hidden');
         document.body.style.overflow = '';
     }
 }
-
 mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-mobileLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', toggleMobileMenu));
 
 
 /* ================================================================
-   LIGHTBOX MODERNO — galerías separadas por data-gallery
+   MASONRY — calcula grid-row-end para cada item según su altura
+   ================================================================ */
+const masonryGallery = document.getElementById('obras-gallery');
+
+function resizeMasonryItem(item) {
+    if (!masonryGallery) return;
+    const rowHeight = parseInt(window.getComputedStyle(masonryGallery).getPropertyValue('grid-auto-rows'));
+    const rowGap    = parseInt(window.getComputedStyle(masonryGallery).getPropertyValue('grid-row-gap'));
+    const content   = item.querySelector('.content');
+    if (!content) return;
+    const contentHeight = content.getBoundingClientRect().height;
+    item.style.gridRowEnd = `span ${Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap))}`;
+}
+
+function resizeAllMasonryItems() {
+    if (!masonryGallery) return;
+    masonryGallery.querySelectorAll('.gallery-item').forEach(resizeMasonryItem);
+}
+
+// Recalcular cuando cada imagen carga
+if (masonryGallery) {
+    masonryGallery.querySelectorAll('img').forEach(img => {
+        if (img.complete) {
+            resizeMasonryItem(img.closest('.gallery-item'));
+        } else {
+            img.addEventListener('load', () => {
+                resizeMasonryItem(img.closest('.gallery-item'));
+            });
+        }
+    });
+}
+
+window.addEventListener('resize', resizeAllMasonryItems);
+
+
+/* ================================================================
+   LIGHTBOX — galerías separadas por data-gallery
    ================================================================ */
 
 const lightbox        = document.getElementById('lightbox');
@@ -156,10 +170,9 @@ const lightboxCounter = document.getElementById('lightbox-counter');
 const lightboxThumbs  = document.getElementById('lightbox-thumbnails');
 
 let currentImageIndex = 0;
-let galleryItems      = [];   // solo los del grupo activo
+let galleryItems      = [];
 let isAnimating       = false;
 
-/* Construir tira de miniaturas para el grupo activo */
 function buildThumbnails() {
     lightboxThumbs.innerHTML = '';
     galleryItems.forEach((item, index) => {
@@ -168,88 +181,61 @@ function buildThumbnails() {
         thumb.src   = src;
         thumb.alt   = '';
         thumb.className = 'lb-thumb';
-        thumb.addEventListener('click', (e) => {
+        thumb.addEventListener('click', e => {
             e.stopPropagation();
-            if (index !== currentImageIndex) {
-                currentImageIndex = index;
-                updateLightboxContent(true);
-            }
+            if (index !== currentImageIndex) { currentImageIndex = index; updateLightboxContent(true); }
         });
         lightboxThumbs.appendChild(thumb);
     });
 }
 
-/* Sincronizar miniatura activa */
 function syncThumbs() {
-    const thumbs = lightboxThumbs.querySelectorAll('.lb-thumb');
-    thumbs.forEach((t, i) => t.classList.toggle('lb-thumb--active', i === currentImageIndex));
-    const active = thumbs[currentImageIndex];
-    if (active) active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    lightboxThumbs.querySelectorAll('.lb-thumb').forEach((t, i) => t.classList.toggle('lb-thumb--active', i === currentImageIndex));
+    const active = lightboxThumbs.querySelectorAll('.lb-thumb')[currentImageIndex];
+    active?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 }
 
-/* Actualizar imagen, título, descripción y contador */
 function updateLightboxContent(animate = false) {
     if (!galleryItems.length) return;
     const item  = galleryItems[currentImageIndex];
     const src   = item.querySelector('img').src;
     const title = item.querySelector('h3').innerText;
     const desc  = item.querySelector('p').innerText;
-
     lightboxCounter.innerText = `${currentImageIndex + 1} / ${galleryItems.length}`;
     syncThumbs();
-
     if (animate && !isAnimating) {
         isAnimating = true;
         lightboxImg.classList.add('lb-img--fade');
         setTimeout(() => {
-            lightboxImg.src         = src;
-            lightboxTitle.innerText = title;
-            lightboxDesc.innerText  = desc;
-            lightboxImg.classList.remove('lb-img--fade');
-            isAnimating = false;
+            lightboxImg.src = src; lightboxTitle.innerText = title; lightboxDesc.innerText = desc;
+            lightboxImg.classList.remove('lb-img--fade'); isAnimating = false;
         }, 220);
     } else {
-        lightboxImg.src         = src;
-        lightboxTitle.innerText = title;
-        lightboxDesc.innerText  = desc;
+        lightboxImg.src = src; lightboxTitle.innerText = title; lightboxDesc.innerText = desc;
     }
 }
 
-function toggleBodyScroll(disable) {
-    document.body.style.overflow = disable ? 'hidden' : '';
-}
+function toggleBodyScroll(disable) { document.body.style.overflow = disable ? 'hidden' : ''; }
 
-/* Abrir lightbox — filtra por el grupo (data-gallery) del elemento clickeado */
 function openLightbox(element) {
     const group = element.getAttribute('data-gallery') || 'obras';
-
-    // Cargar solo los items del mismo grupo
-    galleryItems = Array.from(
-        document.querySelectorAll(`.gallery-item[data-gallery="${group}"]`)
-    );
-
+    galleryItems = Array.from(document.querySelectorAll(`.gallery-item[data-gallery="${group}"]`));
     buildThumbnails();
     currentImageIndex = galleryItems.indexOf(element);
     updateLightboxContent(false);
-
     lightbox.classList.remove('hidden');
-    void lightbox.offsetWidth; // forzar reflow para la transición
+    void lightbox.offsetWidth;
     lightbox.style.opacity = '1';
     toggleBodyScroll(true);
     lucide.createIcons();
 }
 
-/* Cerrar lightbox */
 function closeLightbox() {
     lightbox.style.opacity = '0';
-    setTimeout(() => {
-        lightbox.classList.add('hidden');
-        lightboxImg.src = '';
-    }, 350);
+    setTimeout(() => { lightbox.classList.add('hidden'); lightboxImg.src = ''; }, 350);
     toggleBodyScroll(false);
 }
 
-/* Navegación */
 function prevImage(e) {
     if (e) e.stopPropagation();
     currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
@@ -262,24 +248,16 @@ function nextImage(e) {
     updateLightboxContent(true);
 }
 
-/* Swipe táctil */
 let touchStartX = 0, touchEndX = 0;
 lightbox.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
 lightbox.addEventListener('touchend',   e => { touchEndX   = e.changedTouches[0].screenX; handleSwipe(); }, { passive: true });
-
 function handleSwipe() {
-    const threshold = 50;
-    if (touchEndX < touchStartX - threshold) nextImage();
-    if (touchEndX > touchStartX + threshold) prevImage();
+    if (touchEndX < touchStartX - 50) nextImage();
+    if (touchEndX > touchStartX + 50) prevImage();
 }
 
-/* Cerrar al hacer clic en el fondo oscuro */
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-});
-
-/* Teclado */
-document.addEventListener('keydown', (e) => {
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('hidden')) {
         if (e.key === 'Escape')     closeLightbox();
         if (e.key === 'ArrowRight') nextImage();

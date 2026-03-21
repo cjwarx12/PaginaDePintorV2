@@ -10,30 +10,23 @@
         <meta name="author" content="Carlos Orellana">
         <meta name="robots" content="index, follow">
 
-        <!-- Open Graph -->
         <meta property="og:title" content="Carlos Orellana | Artista Plástico">
         <meta property="og:description" content="Explorando la condición humana a través del expresionismo abstracto.">
         <meta property="og:image" content="/img/Fotoquerepresentapaginaweb.webp">
         <meta property="og:url" content="https://tudominio.com">
         <meta property="og:type" content="website">
 
-        <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Carlos Orellana | Artista Plástico">
         <meta name="twitter:description" content="Descubre obras de arte abstracto de Carlos Orellana">
         <meta name="twitter:image" content="/img/Fotoquerepresentapaginaweb.webp">
 
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-
-        <link rel="stylesheet"   href="styles.css"/>
+        <link rel="stylesheet" href="styles.css"/>
         
-        <!-- Tailwind CSS para los estilos modernos y responsivos -->
         <script src="https://cdn.tailwindcss.com"></script>
-    
-        <!-- Iconos Lucide -->
         <script src="https://unpkg.com/lucide@latest"></script>
 
-        <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -60,15 +53,11 @@
         }
         </script>
 
-        <!-- Agregar en <head>: -->
         <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
         <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
     </head>
 
-
-
-    
     <body class="font-sans antialiased selection:bg-sober-accent selection:text-white">
 
     <!-- Navegación -->
@@ -76,16 +65,13 @@
         <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
             <a href="#inicio" class="font-serif text-2xl font-semibold tracking-wider text-white">Carlos Orellana</a>
             
-            <!-- Menú Escritorio -->
             <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-sober-300">
                 <a href="#biografia" class="hover:text-white transition-colors duration-200" data-i18n="nav_bio">Biografía</a>
                 <a href="#obras" class="hover:text-white transition-colors duration-200" data-i18n="nav_obras">Obras</a>
                 <a href="#exposiciones" class="hover:text-white transition-colors duration-200" data-i18n="nav_expo">Exposiciones</a>
             </div>
 
-            <!-- Controles Derecha: Idioma + Menú Móvil -->
             <div class="flex items-center space-x-4 md:space-x-0">
-                <!-- Selector de Idioma -->
                 <div class="text-sober-300 text-xs md:text-sm tracking-widest flex space-x-2 md:ml-8 items-center bg-black/20 md:bg-transparent px-3 py-1.5 rounded-full border border-white/10 md:border-none">
                     <button onclick="changeLanguage('es')" id="btn-es" class="hover:text-white transition-colors lang-active">ES</button>
                     <span class="opacity-30">|</span>
@@ -93,18 +79,15 @@
                     <span class="opacity-30">|</span>
                     <button onclick="changeLanguage('it')" id="btn-it" class="hover:text-white transition-colors">IT</button>
                 </div>
-
-                <!-- Botón Menú Móvil -->
                 <button class="md:hidden text-white focus:outline-none relative p-2 -mr-2" id="mobile-menu-btn" aria-label="Menú">
                     <i data-lucide="menu" id="icon-menu"></i>
                     <i data-lucide="x" id="icon-close" class="hidden"></i>
                 </button>
             </div>
-
         </div>
     </nav>
 
-    <!-- Menú Móvil Desplegable (Pantalla completa para mejor UX táctil) -->
+    <!-- Menú Móvil -->
     <div id="mobile-menu" class="fixed inset-0 z-50 bg-sober-900/98 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 text-lg uppercase tracking-widest text-sober-300 opacity-0 pointer-events-none transition-opacity duration-300">
         <a href="#biografia" class="hover:text-white transition-colors duration-200 mobile-link p-4" data-i18n="nav_bio">Biografía</a>
         <a href="#obras" class="hover:text-white transition-colors duration-200 mobile-link p-4" data-i18n="nav_obras">Obras</a>
@@ -113,13 +96,10 @@
 
     <!-- Sección Inicio (Hero) -->
     <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- Imagen de fondo -->
         <div class="absolute inset-0 z-0">
             <img src="img/FondoPintor.webp" alt="Estudio de arte" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sober-900/50 to-sober-900"></div>
         </div>
-        
-        <!-- Contenido -->
         <div class="relative z-10 text-center px-4">
             <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-white">
                 Carlos Orellana
@@ -139,31 +119,22 @@
     <section id="biografia" class="py-24 bg-sober-900">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="flex flex-col md:flex-row gap-12 lg:gap-16 items-center">
-                
-                <!-- Retrato -->
                 <div class="w-full md:w-1/2 lg:w-5/12 relative max-w-md mx-auto md:max-w-none">
                     <div class="aspect-[3/4] overflow-hidden relative group rounded-sm">
                         <img src="img/Pintor.webp" alt="Retrato del Pintor" loading="lazy" class="w-full h-full object-cover grayscale md:hover:grayscale-0 transition-all duration-700">
                         <div class="absolute inset-0 ring-1 ring-inset ring-white/10"></div>
                     </div>
-                    <!-- Decoración -->
                     <div class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-sober-800 -z-10 rounded-sm"></div>
                 </div>
-
-                <!-- Texto -->
                 <div class="w-full md:w-1/2 lg:w-7/12 mt-8 md:mt-0">
                     <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6 md:mb-8 border-l-4 border-sober-accent pl-4 md:pl-6" data-i18n="bio_title">El Artista</h2>
                     <div class="space-y-6 text-sober-300 font-light leading-relaxed text-base md:text-lg">
-                        
                         <h3 class="text-xl md:text-2xl text-white font-serif mb-2" data-i18n="bio_subtitle">
                             Carlos Orellana — La Energía del Abstraccionismo Contemporáneo
                         </h3>
-                        
                         <blockquote class="pl-6 border-l-2 border-sober-accent/50 italic text-sober-100" data-i18n="bio_quote">
                             "El arte abstracto no se observa, se siente. Es un diálogo silencioso entre la materia, el color y la emoción."
                         </blockquote>
-                        
-                        <!-- Contenedor Tabulado -->
                         <div class="pl-6 md:pl-8 space-y-5 border-l border-white/5">
                             <p data-i18n="bio_p1">
                                 Carlos Orellana, pintor de arte abstracto originario de El Salvador y actualmente residente en Busto Arsizio, Italia, desarrolla una propuesta artística que fusiona la intensidad del expresionismo con la fuerza visual del street art contemporáneo. Su obra nace del movimiento, del gesto libre y de la necesidad de transformar la experiencia humana en lenguaje plástico.
@@ -172,143 +143,164 @@
                                 Cada una de sus composiciones es un espacio abierto: líneas que se cruzan como rutas de pensamiento, capas de color que evocan memoria, energía y transformación. En su trabajo no existen formas cerradas, sino vibraciones visuales que invitan al espectador a interpretar, descubrir y sentir desde su propia sensibilidad.
                             </p>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Sección Obras (Galería) -->
-    <section id="obras" class="py-24 bg-sober-800">
+    <!-- ============================================================ -->
+    <!-- Sección Obras — Masonry layout                              -->
+    <!-- ============================================================ -->
+    <section id="obras" class="py-24 obras-wall">
         <div class="container mx-auto px-6 lg:px-12 text-center mb-12 md:mb-16">
             <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-4" data-i18n="works_title">Obras Selectas</h2>
             <p class="text-sober-300 font-light max-w-xl mx-auto text-sm md:text-base" data-i18n="works_desc">Un recorrido visual por las piezas más representativas.</p>
         </div>
 
-        <!-- Grid de Galería -->
         <div class="container mx-auto px-4 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-                
+            <div class="masonry-gallery" id="obras-gallery">
+
                 <!-- Obra 1 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/AlbedrioTecnicaMistica.webp" alt="Obra Albedrio - Técnica Mixta - Carlos Orellana" loading="lazy" width="400" height="500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Albedrio</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/AlbedrioTecnicaMistica.webp" alt="Albedrio - Técnica Mixta - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>Albedrio</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 2 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/AmorenSalida TituloMista.webp" alt="Fragmentos del Ser" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Amor En Salida</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/AmorenSalida TituloMista.webp" alt="Amor en Salida - Técnica Mixta - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>Amor En Salida</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 3 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/AmorNefro tecnicaMista.webp" alt="Ecos de la Memoria" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Amor Nefro</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/AmorNefro tecnicaMista.webp" alt="Amor Nefro - Técnica Mixta - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>Amor Nefro</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 4 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/ConfusionalEgo TecnicaMista.webp" alt="Abismo Geométrico" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Confusion al Ego</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/ConfusionalEgo TecnicaMista.webp" alt="Confusion al Ego - Técnica Mixta - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>Confusion al Ego</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 5 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/ContragolpedeNatura TecnicaMista.webp" alt="Silencio Dorado" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Contragolpe de Natura</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/ContragolpedeNatura TecnicaMista.webp" alt="Contragolpe de Natura - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>Contragolpe de Natura</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 6 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/ElecodeunaRisa tecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">El Eco de una Risa</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/ElecodeunaRisa tecnicaMista.webp" alt="El Eco de una Risa - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>El Eco de una Risa</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 7 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/ElEncuentro TecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">El Encuentro</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/ElEncuentro TecnicaMista.webp" alt="El Encuentro - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>El Encuentro</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 8 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/EngañandoelTiempo tecnica mista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Engañando el Tiempo</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/EngañandoelTiempo tecnica mista.webp" alt="Engañando el Tiempo - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>Engañando el Tiempo</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 9 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/FugadeunSueño TecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Fuga de un Sueño</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/FugadeunSueño TecnicaMista.webp" alt="Fuga de un Sueño - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>Fuga de un Sueño</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 10 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Linea 8 TecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Línea 8</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/Linea 8 TecnicaMista.webp" alt="Línea 8 - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>Línea 8</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 11 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/LuzNegativa TecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Luz Negativa</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/LuzNegativa TecnicaMista.webp" alt="Luz Negativa - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>Luz Negativa</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Obra 12 -->
-                <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/VidaTinta TecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Vida Tinta</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
+                    <div class="content">
+                        <img src="img/VidaTinta TecnicaMista.webp" alt="Vida Tinta - Carlos Orellana" loading="lazy">
+                        <div class="obra-overlay">
+                            <h3>Vida Tinta</h3>
+                            <p>Tecnica Mista</p>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
+    <!-- ============================================================ -->
 
-    <!-- ============================================================ -->
-    <!-- LIGHTBOX MODERNO — única sección modificada                  -->
-    <!-- ============================================================ -->
+    <!-- LIGHTBOX — sin cambios -->
     <div id="lightbox" class="fixed inset-0 z-[70] hidden opacity-0" style="background: rgba(4,4,4,0.97); transition: opacity 0.35s ease;">
 
-        <!-- Barra superior -->
         <div class="lightbox-topbar">
             <span class="lightbox-brand">Carlos Orellana</span>
             <span id="lightbox-counter" class="lightbox-counter"></span>
@@ -317,39 +309,30 @@
             </button>
         </div>
 
-        <!-- Zona central: botón prev + imagen + botón next -->
         <div class="lightbox-stage">
-
             <button onclick="prevImage(event)" class="lightbox-nav-btn lightbox-nav-prev" aria-label="Anterior">
                 <i data-lucide="chevron-left" style="width:28px;height:28px;"></i>
             </button>
-
-            <!-- Imagen principal -->
             <div class="lightbox-img-wrapper">
                 <img id="lightbox-img" src="" alt="Obra ampliada" class="lightbox-main-img">
             </div>
-
             <button onclick="nextImage(event)" class="lightbox-nav-btn lightbox-nav-next" aria-label="Siguiente">
                 <i data-lucide="chevron-right" style="width:28px;height:28px;"></i>
             </button>
-
         </div>
 
-        <!-- Caption (título + descripción) -->
         <div class="lightbox-caption-bar">
             <h3 id="lightbox-title" class="lightbox-title"></h3>
             <p  id="lightbox-desc"  class="lightbox-desc"></p>
         </div>
 
-        <!-- Tira de miniaturas -->
         <div class="lightbox-filmstrip-wrap">
             <div id="lightbox-thumbnails" class="lightbox-filmstrip"></div>
         </div>
 
     </div>
-    <!-- ============================================================ -->
 
-    <!-- Sección Exposiciones -->
+    <!-- Sección Exposiciones — sin cambios -->
     <section id="exposiciones" class="py-24 bg-sober-900">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="max-w-4xl mx-auto">
@@ -357,7 +340,6 @@
                 
                 <div class="space-y-16 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-sober-800 before:to-transparent">
                     
-                    <!-- Item 1 -->
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                         <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-sober-900 group-hover:bg-white transition-colors duration-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
                             <div class="w-2 h-2 rounded-full bg-white group-hover:bg-sober-900 transition-colors"></div>
@@ -376,7 +358,6 @@
                         </div>
                     </div>
 
-                    <!-- Item 2 -->
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                         <div class="flex items-center justify-center w-10 h-10 rounded-full border border-sober-800 bg-sober-900 group-hover:border-white transition-colors duration-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
                             <div class="w-2 h-2 rounded-full bg-sober-800 group-hover:bg-white transition-colors"></div>
@@ -395,7 +376,6 @@
                         </div>
                     </div>
 
-                    <!-- Item 3 -->
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                         <div class="flex items-center justify-center w-10 h-10 rounded-full border border-sober-800 bg-sober-900 group-hover:border-white transition-colors duration-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
                             <div class="w-2 h-2 rounded-full bg-sober-800 group-hover:bg-white transition-colors"></div>
@@ -414,7 +394,6 @@
                         </div>
                     </div>
 
-                    <!-- Item 4 -->
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                         <div class="flex items-center justify-center w-10 h-10 rounded-full border border-sober-800 bg-sober-900 group-hover:border-white transition-colors duration-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
                             <div class="w-2 h-2 rounded-full bg-sober-800 group-hover:bg-white transition-colors"></div>
@@ -459,11 +438,8 @@
         </div>
     </footer>
 
-    <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8deba2637ae843d68a349cd613848782"}'></script>
-    <!-- End Cloudflare Web Analytics -->
-    
-        
+
     </body>
     <script src="script.js"></script>
 
