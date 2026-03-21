@@ -5,10 +5,26 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="og:title" content="CarlosOrellana | Artista Plástico">
+        <meta name="description" content="Carlos Orellana - Artista plástico especializado en expresionismo abstracto. Obras selectas y exposiciones internacionales.">
+        <meta name="keywords" content="arte abstracto, pintor, expresionismo, galería de arte, artista plástico">
+        <meta name="author" content="Carlos Orellana">
+        <meta name="robots" content="index, follow">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Carlos Orellana | Artista Plástico">
         <meta property="og:description" content="Explorando la condición humana a través del expresionismo abstracto.">
-        <meta property="og:image" content="URL_DE_UNA_IMAGEN_REPRESENTATIVA_AQUI.jpg">
-        <meta property="og:url" content="https://www.tudominio.com">
+        <meta property="og:image" content="/img/Fotoquerepresentapaginaweb.webp">
+        <meta property="og:url" content="https://tudominio.com">
+        <meta property="og:type" content="website">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Carlos Orellana | Artista Plástico">
+        <meta name="twitter:description" content="Descubre obras de arte abstracto de Carlos Orellana">
+        <meta name="twitter:image" content="/img/Fotoquerepresentapaginaweb.webp">
+
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
         <link rel="stylesheet"   href="styles.css"/>
         
         <!-- Tailwind CSS para los estilos modernos y responsivos -->
@@ -23,7 +39,30 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
         <title>Carlos Orellana | Artista Plástico</title>
 
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Carlos Orellana",
+            "description": "Artista plástico especializado en expresionismo abstracto",
+            "image": "img/Fotoquerepresentapaginaweb.webp",
+            "jobTitle": "Artista Plástico",
+            "url": "https://tudominio.com",
+            "sameAs": [
+                "https://instagram.com/carlosorellana",
+                "https://twitter.com/carlosorellana"
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Busto Arsizio",
+                "addressCountry": "IT"
+            }
+        }
+        </script>
+
     </head>
+
+
 
     
     <body class="font-sans antialiased selection:bg-sober-accent selection:text-white">
@@ -72,7 +111,7 @@
     <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
         <!-- Imagen de fondo -->
         <div class="absolute inset-0 z-0">
-            <img src="img/FondoPintor.jpg" alt="Estudio de arte" class="w-full h-full object-cover opacity-60">
+            <img src="img/FondoPintor.webp" alt="Estudio de arte" class="w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sober-900/50 to-sober-900"></div>
         </div>
         
@@ -100,7 +139,7 @@
                 <!-- Retrato -->
                 <div class="w-full md:w-1/2 lg:w-5/12 relative max-w-md mx-auto md:max-w-none">
                     <div class="aspect-[3/4] overflow-hidden relative group rounded-sm">
-                        <img src="img/Pintor.png" alt="Retrato del Pintor" loading="lazy" class="w-full h-full object-cover grayscale md:hover:grayscale-0 transition-all duration-700">
+                        <img src="img/Pintor.webp" alt="Retrato del Pintor" loading="lazy" class="w-full h-full object-cover grayscale md:hover:grayscale-0 transition-all duration-700">
                         <div class="absolute inset-0 ring-1 ring-inset ring-white/10"></div>
                     </div>
                     <!-- Decoración -->
@@ -150,109 +189,109 @@
                 
                 <!-- Obra 1 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (10).jpg" alt="Melancolía en Rojo" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/AlbedrioTecnicaMistica.webp" alt="Obra Albedrio - Técnica Mixta - Carlos Orellana" loading="lazy" width="400" height="500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Melancolía en Rojo</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2021</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">Albedrio</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 2 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (13).jpg" alt="Fragmentos del Ser" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/AmorenSalida TituloMista.webp" alt="Fragmentos del Ser" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Fragmentos del Ser</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Técnica mixta, 2022</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">Amor En Salida</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 3 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (3).jpg" alt="Ecos de la Memoria" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/AmorNefro tecnicaMista.webp" alt="Ecos de la Memoria" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Ecos de la Memoria</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Acrílico, 2019</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">Amor Nefro</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 4 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (4).jpg" alt="Abismo Geométrico" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/ConfusionalEgo TecnicaMista.webp" alt="Abismo Geométrico" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Abismo Geométrico</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre madera, 2023</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">Confusion al Ego</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 5 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (5).jpg" alt="Silencio Dorado" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/ContragolpedeNatura TecnicaMista.webp" alt="Silencio Dorado" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Silencio Dorado</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Textura y pan de oro, 2020</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">Contragolpe de Natura</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 6 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/ElecodeunaRisa tecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">El Eco de una Risa</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 7 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/ElEncuentro TecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">El Encuentro</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 8 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/EngañandoelTiempo tecnica mista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">Engañando el Tiempo</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 9 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/FugadeunSueño TecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">Fuga de un Sueño</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 10 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/Linea 8 TecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">Línea 8</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 11 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/LuzNegativa TecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">Luz Negativa</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
                 <!-- Obra 12 -->
                 <div class="group relative aspect-square sm:aspect-[4/5] lg:aspect-square overflow-hidden cursor-pointer bg-sober-900 gallery-item rounded-sm shadow-lg" data-gallery="obras" onclick="openLightbox(this)">
-                    <img src="img/Carlos Orellana (6).jpg" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
+                    <img src="img/VidaTinta TecnicaMista.webp" alt="Dualidad" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 md:p-6">
-                        <h3 class="text-white font-serif text-lg md:text-xl">Dualidad</h3>
-                        <p class="text-sober-300 text-xs md:text-sm font-light">Óleo sobre lienzo, 2024</p>
+                        <h3 class="text-white font-serif text-lg md:text-xl">Vida Tinta</h3>
+                        <p class="text-sober-300 text-xs md:text-sm font-light">Tecnica Mista</p>
                     </div>
                 </div>
 
