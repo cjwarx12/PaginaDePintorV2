@@ -289,14 +289,15 @@ body {
 .lightbox-nav-next { right: 20px; }
 .lightbox-nav-next:hover { transform: translateY(-50%) translateX(2px); }
 
-/* Flechas: ocultas en táctil (móvil/tablet portrait y landscape), visibles solo en desktop con mouse */
-@media (hover: none) {
-    .lightbox-nav-btn { display: none !important; }
-    .lightbox-stage   { padding: 8px 16px; }
+/* Flechas: ocultas en táctil (pointer:coarse = móvil/tablet en cualquier orientación) */
+@media (pointer: coarse) {
+    .lightbox-nav-btn  { display: none !important; }
+    .lightbox-stage    { padding: 8px 16px !important; }
     .lightbox-main-img { max-height: 65vh; }
 }
 
-@media (hover: hover) {
+/* Flechas: visibles solo en dispositivos con mouse preciso */
+@media (pointer: fine) {
     .lightbox-nav-prev { left: 32px; }
     .lightbox-nav-next { right: 32px; }
     .lightbox-stage    { padding: 8px 112px; }
@@ -370,9 +371,5 @@ body {
 }
 
 @media (max-width: 480px) {
-    .lightbox-nav-btn { width: 40px; height: 40px; }
-    .lightbox-nav-prev { left: 8px; }
-    .lightbox-nav-next { right: 8px; }
-    .lightbox-stage    { padding: 8px 60px; }
-    .lb-thumb          { width: 42px; height: 32px; }
+    .lb-thumb { width: 42px; height: 32px; }
 }
