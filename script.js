@@ -34,10 +34,33 @@ const translations = {
         bio_p2: "Cada una de sus composiciones es un espacio abierto: líneas que se cruzan como rutas de pensamiento, capas de color que evocan memoria, energía y transformación. En su trabajo no existen formas cerradas, sino vibraciones visuales que invitan al espectador a interpretar, descubrir y sentir desde su propia sensibilidad.",
         works_title: "Obras Selectas", works_desc: "Un recorrido visual por las piezas más representativas de la última década.",
         expo_title: "Exposiciones Destacadas",
-        expo_1: "Galería de Arte Contemporáneo, Madrid, España. (Exposición Individual)",
-        expo_2: "Museo de Arte Moderno, Ciudad de México. (Exposición Colectiva)",
-        expo_3: "Art Basel, Miami, USA. (Feria de Arte)",
-        expo_4: "Galería Nacional, Buenos Aires, Argentina. (Exposición Revelación)",
+        expo_1: "Rorarte, Italia. (Exposición Colectiva de artistas)",
+        expo_2: "Richmond TW9 LHP, Reino Unido. (Exposición Colectiva)",
+        expo_3: "",
+        expo_4: "San Salvador, El Salvador. (Periódico Salvadoreño)",
+        obra_01_title: "Albedrio",
+        obra_02_title: "Amor En Salida",
+        obra_03_title: "Amor Nefro",
+        obra_04_title: "Confusion al Ego",
+        obra_05_title: "Contragolpe de Natura",
+        obra_06_title: "El Eco de una Risa",
+        obra_07_title: "El Encuentro",
+        obra_08_title: "Engañando el Tiempo",
+        obra_09_title: "Fuga de un Sueño",
+        obra_10_title: "Línea 8",
+        obra_11_title: "Luz Negativa",
+        obra_12_title: "Nuestro Confine",
+        obra_13_title: "Nota 83",
+        obra_14_title: "Parodia 21",
+        obra_15_title: "Tiempo y Luna",
+        obra_16_title: "1998",
+        obra_17_title: "Blue",
+        obra_18_title: "Sin Despedida",
+        obra_19_title: "Fuga de un Amor",
+        obra_20_title: "Iluso",
+        obra_21_title: "Invierno",
+        obra_22_title: "Luz",
+        obra_tecnica: "Tecnica Mista",
         footer_rights: "Todos los derechos reservados."
     },
     en: {
@@ -50,10 +73,33 @@ const translations = {
         bio_p2: "Each of his compositions is an open space: lines that cross like paths of thought, layers of color that evoke memory, energy, and transformation. In his work, there are no closed forms, but visual vibrations that invite the viewer to interpret, discover, and feel from their own sensitivity.",
         works_title: "Selected Artworks", works_desc: "A visual journey through the most representative pieces of the last decade.",
         expo_title: "Featured Exhibitions",
-        expo_1: "Contemporary Art Gallery, Madrid, Spain. (Solo Exhibition)",
-        expo_2: "Museum of Modern Art, Mexico City. (Collective Exhibition)",
-        expo_3: "Art Basel, Miami, USA. (Art Fair)",
-        expo_4: "National Gallery, Buenos Aires, Argentina. (Revelation Exhibition)",
+        expo_1: "Rorarte, Italy. (Collective Exhibition)",
+        expo_2: "Richmond TW9 LHP, United Kingdom. (Collective Exhibition)",
+        expo_3: "",
+        expo_4: "San Salvador, El Salvador. (Salvadoran Newspaper)",
+        obra_01_title: "Free Will",
+        obra_02_title: "Love in Exit",
+        obra_03_title: "Nephro Love",
+        obra_04_title: "Ego Confusion",
+        obra_05_title: "Counterblow of Nature",
+        obra_06_title: "The Echo of a Laugh",
+        obra_07_title: "The Encounter",
+        obra_08_title: "Deceiving Time",
+        obra_09_title: "Flight of a Dream",
+        obra_10_title: "Line 8",
+        obra_11_title: "Negative Light",
+        obra_12_title: "Our Boundary",
+        obra_13_title: "Note 83",
+        obra_14_title: "Parody 21",
+        obra_15_title: "Time and Moon",
+        obra_16_title: "1998",
+        obra_17_title: "Blue",
+        obra_18_title: "Without Goodbye",
+        obra_19_title: "Flight of a Love",
+        obra_20_title: "Dreamer",
+        obra_21_title: "Winter",
+        obra_22_title: "Light",
+        obra_tecnica: "Mixed Technique",
         footer_rights: "All rights reserved."
     },
     it: {
@@ -66,10 +112,33 @@ const translations = {
         bio_p2: "Ognuna delle sue composizioni è uno spazio aperto: linee che si incrociano come percorsi di pensiero, strati di colore che evocano memoria, energia e trasformazione. Nel suo lavoro non esistono forme chiuse, ma vibrazioni visive che invitano lo spettatore a interpretare, scoprire e sentire a partire dalla propria sensibilità.",
         works_title: "Opere Selezionate", works_desc: "Un viaggio visivo attraverso le opere più rappresentative dell'ultimo decennio.",
         expo_title: "Mostre in Evidenza",
-        expo_1: "Galleria d'Arte Contemporanea, Madrid, Spagna. (Mostra Personale)",
-        expo_2: "Museo d'Arte Moderna, Città del Messico. (Mostra Collettiva)",
-        expo_3: "Art Basel, Miami, USA. (Fiera d'Arte)",
-        expo_4: "Galleria Nazionale, Buenos Aires, Argentina. (Mostra Rivelazione)",
+        expo_1: "Rorarte, Italia. (Mostra Collettiva di artisti)",
+        expo_2: "Richmond TW9 LHP, Regno Unito. (Mostra Collettiva)",
+        expo_3: "",
+        expo_4: "San Salvador, El Salvador. (Giornale Salvadoregno)",
+        obra_01_title: "Libero Arbitrio",
+        obra_02_title: "Amore in Uscita",
+        obra_03_title: "Amore Nefro",
+        obra_04_title: "Confusione all'Ego",
+        obra_05_title: "Contraccolpo della Natura",
+        obra_06_title: "L'Eco di una Risata",
+        obra_07_title: "L'Incontro",
+        obra_08_title: "Ingannando il Tempo",
+        obra_09_title: "Fuga di un Sogno",
+        obra_10_title: "Linea 8",
+        obra_11_title: "Luce Negativa",
+        obra_12_title: "Nostro Confine",
+        obra_13_title: "Nota 83",
+        obra_14_title: "Parodia 21",
+        obra_15_title: "Tempo e Luna",
+        obra_16_title: "1998",
+        obra_17_title: "Blue",
+        obra_18_title: "Senza Addio",
+        obra_19_title: "Fuga di un Amore",
+        obra_20_title: "Illuso",
+        obra_21_title: "Inverno",
+        obra_22_title: "Luce",
+        obra_tecnica: "Tecnica Mista",
         footer_rights: "Tutti i diritti riservati."
     }
 };
@@ -129,12 +198,16 @@ const masonryGallery = document.getElementById('obras-gallery');
 
 function resizeMasonryItem(item) {
     if (!masonryGallery) return;
+    item.style.gridRowEnd = '';
     const rowHeight = parseInt(window.getComputedStyle(masonryGallery).getPropertyValue('grid-auto-rows'));
-    const rowGap    = parseInt(window.getComputedStyle(masonryGallery).getPropertyValue('grid-row-gap'));
+    const rowGap    = parseInt(window.getComputedStyle(masonryGallery).getPropertyValue('row-gap') ||
+                               window.getComputedStyle(masonryGallery).getPropertyValue('grid-row-gap')) || 14;
     const content   = item.querySelector('.content');
     if (!content) return;
     const contentHeight = content.getBoundingClientRect().height;
-    item.style.gridRowEnd = `span ${Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap))}`;
+    if (contentHeight > 0) {
+        item.style.gridRowEnd = `span ${Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap))}`;
+    }
 }
 
 function resizeAllMasonryItems() {
@@ -142,20 +215,33 @@ function resizeAllMasonryItems() {
     masonryGallery.querySelectorAll('.gallery-item').forEach(resizeMasonryItem);
 }
 
-// Recalcular cuando cada imagen carga
+let masonryTimer;
+function debouncedResize() {
+    clearTimeout(masonryTimer);
+    masonryTimer = setTimeout(resizeAllMasonryItems, 100);
+}
+
 if (masonryGallery) {
     masonryGallery.querySelectorAll('img').forEach(img => {
-        if (img.complete) {
+        if (img.complete && img.naturalHeight > 0) {
             resizeMasonryItem(img.closest('.gallery-item'));
         } else {
-            img.addEventListener('load', () => {
-                resizeMasonryItem(img.closest('.gallery-item'));
-            });
+            img.addEventListener('load', () => resizeMasonryItem(img.closest('.gallery-item')));
+            img.addEventListener('error', () => resizeMasonryItem(img.closest('.gallery-item')));
         }
+    });
+
+    window.addEventListener('load', () => {
+        resizeAllMasonryItems();
+        setTimeout(resizeAllMasonryItems, 300);
     });
 }
 
-window.addEventListener('resize', resizeAllMasonryItems);
+window.addEventListener('resize', debouncedResize);
+window.addEventListener('orientationchange', () => {
+    setTimeout(resizeAllMasonryItems, 400);
+});
+
 
 
 /* ================================================================
