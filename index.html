@@ -119,13 +119,20 @@
     <section id="biografia" class="py-24 bg-sober-900">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="flex flex-col md:flex-row gap-12 lg:gap-16 items-center">
-                <div class="w-full md:w-1/2 lg:w-5/12 relative max-w-md mx-auto md:max-w-none">
-                    <div class="aspect-[3/4] overflow-hidden relative group rounded-sm">
-                        <img src="img/Pintor.webp" alt="Retrato del Pintor" loading="lazy" class="w-full h-full object-cover grayscale md:hover:grayscale-0 transition-all duration-700">
-                        <div class="absolute inset-0 ring-1 ring-inset ring-white/10"></div>
+
+                <!-- Galería hexagonal — reemplaza el retrato -->
+                <div class="w-full md:w-1/2 lg:w-5/12 flex items-center justify-center py-8 md:py-0">
+                    <div class="hex-gallery">
+                        <img src="img/RetratoCarlosOrellana06.webp" alt="Carlos Orellana" loading="lazy">
+                        <img src="img/Pintor.webp" alt="Carlos Orellana" loading="lazy">
+                        <img src="img/RetratoCarlosOrellana07.webp" alt="Carlos Orellana" loading="lazy">
+                        <img src="img/RetratoCarlosOrellana08.webp" alt="Carlos Orellana" loading="lazy">
+                        <img src="img/RetratoCarlosOrellana10.webp" alt="Carlos Orellana" loading="lazy">
+                        <img src="img/RetratoCarlosOrellana13.webp" alt="Carlos Orellana" loading="lazy">
+                        <img src="img/RetratoCarlosOrellana04.webp" alt="Carlos Orellana" loading="lazy">
                     </div>
-                    <div class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-sober-800 -z-10 rounded-sm"></div>
                 </div>
+
                 <div class="w-full md:w-1/2 lg:w-7/12 mt-8 md:mt-0">
                     <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6 md:mb-8 border-l-4 border-sober-accent pl-4 md:pl-6" data-i18n="bio_title">El Artista</h2>
                     <div class="space-y-6 text-sober-300 font-light leading-relaxed text-base md:text-lg">
@@ -149,19 +156,15 @@
         </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- Sección Obras — Masonry layout                              -->
-    <!-- ============================================================ -->
+    <!-- Sección Obras — Masonry layout -->
     <section id="obras" class="py-24 obras-wall">
         <div class="container mx-auto px-6 lg:px-12 text-center mb-12 md:mb-16">
             <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-4" data-i18n="works_title">Obras Selectas</h2>
             <p class="text-sober-300 font-light max-w-xl mx-auto text-sm md:text-base" data-i18n="works_desc">Un recorrido visual por las piezas más representativas.</p>
         </div>
-
         <div class="container mx-auto px-4 lg:px-8">
             <div class="masonry-gallery" id="obras-gallery">
-
-                <!-- Obra 1 -->
+                
                 <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
                     <div class="content">
                         <img src="img/AlbedrioTecnicaMistica.webp" alt="Albedrio - Técnica Mixta - Carlos Orellana" loading="lazy">
@@ -171,11 +174,10 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Obra 2 -->
+                
                 <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
                     <div class="content">
-                        <img src="img/AmorenSalidaTituloMista.webp" alt="Amor en Salida - Técnica Mixta - Carlos Orellana" loading="lazy">
+                        <img src="img/AmorenSalidaTituloMista.webp" alt="Amor en Salida - Carlos Orellana" loading="lazy">
                         <div class="obra-overlay">
                             <h3>Amor En Salida</h3>
                             <p>Tecnica Mista</p>
@@ -183,234 +185,32 @@
                     </div>
                 </div>
 
-                <!-- Obra 3 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/AmorNefrotecnicaMista.webp" alt="Amor Nefro - Técnica Mixta - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Amor Nefro</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 4 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/ConfusionalEgoTecnicaMista.webp" alt="Confusion al Ego - Técnica Mixta - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Confusion al Ego</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 5 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/ContragolpedeNaturaTecnicaMista.webp" alt="Contragolpe de Natura - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Contragolpe de Natura</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 6 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/ElecodeunaRisaTecnicaMista.webp" alt="El Eco de una Risa - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>El Eco de una Risa</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 7 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/ElEncuentroTecnicaMista.webp" alt="El Encuentro - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>El Encuentro</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 8 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/EngañandoelTiempoTecnicaMista.webp" alt="Engañando el Tiempo - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Engañando el Tiempo</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 9 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/FugadeunSueñoTecnicaMista.webp" alt="Fuga de un Sueño - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Fuga de un Sueño</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 10 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/Linea8TecnicaMista.webp" alt="Línea 8 - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Línea 8</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 11 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/LuzNegativaTecnicaMista.webp" alt="Luz Negativa - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Luz Negativa</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 12 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/NuestroConfineTecnicaMista.webp" alt="Nuestro Confine - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Nuestro Confine</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 13 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/Nota83TecnicaMista.webp" alt="Nota 83 - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Nota 83</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 14 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/Parodia21TecnicMista.webp" alt="Parodia 21 - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Parodia 21</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 15 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/TiempoyLunaTecnicamista.webp" alt="Tiempo y Luna - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Tiempo y Luna</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 16 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/1998TecnicaMista.webp" alt="1998 - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>1998</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 17 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/BlueTecnicaMista.webp" alt="Blue - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Blue</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 18 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/SinDespedidaTecnicaMista.webp" alt="Sin Despedida - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Sin Despedida</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 19 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/FugadeunAmorTecnicaMista.webp" alt="Fuga de un Amor - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Fuga de un Amor</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 20 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/IlusoTecnicaMista.webp" alt="Iluso - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Iluso</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 21 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/InviernoTecnicamista.webp" alt="Invierno - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Invierno</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Obra 22 -->
-                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)">
-                    <div class="content">
-                        <img src="img/LuztecnicaMista.webp" alt="Luz - Carlos Orellana" loading="lazy">
-                        <div class="obra-overlay">
-                            <h3>Luz</h3>
-                            <p>Tecnica Mista</p>
-                        </div>
-                    </div>
-                </div>
-
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/AmorNefrotecnicaMista.webp" alt="Amor Nefro - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Amor Nefro</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/ConfusionalEgoTecnicaMista.webp" alt="Confusion al Ego - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Confusion al Ego</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/ContragolpedeNaturaTecnicaMista.webp" alt="Contragolpe de Natura - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Contragolpe de Natura</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/ElecodeunaRisaTecnicaMista.webp" alt="El Eco de una Risa - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>El Eco de una Risa</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/ElEncuentroTecnicaMista.webp" alt="El Encuentro - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>El Encuentro</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/EngañandoelTiempoTecnicaMista.webp" alt="Engañando el Tiempo - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Engañando el Tiempo</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/FugadeunSueñoTecnicaMista.webp" alt="Fuga de un Sueño - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Fuga de un Sueño</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/Linea8TecnicaMista.webp" alt="Línea 8 - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Línea 8</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/LuzNegativaTecnicaMista.webp" alt="Luz Negativa - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Luz Negativa</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/NuestroConfineTecnicaMista.webp" alt="Nuestro Confine - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Nuestro Confine</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/Nota83TecnicaMista.webp" alt="Nota 83 - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Nota 83</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/Parodia21TecnicMista.webp" alt="Parodia 21 - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Parodia 21</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/TiempoyLunaTecnicamista.webp" alt="Tiempo y Luna - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Tiempo y Luna</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/1998TecnicaMista.webp" alt="1998 - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>1998</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/BlueTecnicaMista.webp" alt="Blue - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Blue</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/SinDespedidaTecnicaMista.webp" alt="Sin Despedida - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Sin Despedida</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/FugadeunAmorTecnicaMista.webp" alt="Fuga de un Amor - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Fuga de un Amor</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/IlusoTecnicaMista.webp" alt="Iluso - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Iluso</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/InviernoTecnicamista.webp" alt="Invierno - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Invierno</h3><p>Tecnica Mista</p></div></div></div>
+                <div class="gallery-item" data-gallery="obras" onclick="openLightbox(this)"><div class="content"><img src="img/LuztecnicaMista.webp" alt="Luz - Carlos Orellana" loading="lazy"><div class="obra-overlay"><h3>Luz</h3><p>Tecnica Mista</p></div></div></div>
             </div>
         </div>
     </section>
-    <!-- ============================================================ -->
 
-    <!-- LIGHTBOX — sin cambios -->
+    <!-- LIGHTBOX -->
     <div id="lightbox" class="fixed inset-0 z-[70] hidden opacity-0" style="background: rgba(4,4,4,0.97); transition: opacity 0.35s ease;">
-
         <div class="lightbox-topbar">
             <span class="lightbox-brand">Carlos Orellana</span>
             <span id="lightbox-counter" class="lightbox-counter"></span>
@@ -418,7 +218,6 @@
                 <i data-lucide="x" style="width:20px;height:20px;"></i>
             </button>
         </div>
-
         <div class="lightbox-stage">
             <button onclick="prevImage(event)" class="lightbox-nav-btn lightbox-nav-prev" aria-label="Anterior">
                 <i data-lucide="chevron-left" style="width:28px;height:28px;"></i>
@@ -430,26 +229,22 @@
                 <i data-lucide="chevron-right" style="width:28px;height:28px;"></i>
             </button>
         </div>
-
         <div class="lightbox-caption-bar">
             <h3 id="lightbox-title" class="lightbox-title"></h3>
-            <p  id="lightbox-desc"  class="lightbox-desc"></p>
+            <p id="lightbox-desc" class="lightbox-desc"></p>
         </div>
-
         <div class="lightbox-filmstrip-wrap">
             <div id="lightbox-thumbnails" class="lightbox-filmstrip"></div>
         </div>
-
     </div>
 
-    <!-- Sección Exposiciones — sin cambios -->
+    <!-- Sección Exposiciones -->
     <section id="exposiciones" class="py-24 bg-sober-900">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="max-w-4xl mx-auto">
                 <h2 class="font-serif text-3xl md:text-5xl text-white mb-16 text-center" data-i18n="expo_title">Exposiciones Destacadas</h2>
-                
                 <div class="space-y-16 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-sober-800 before:to-transparent">
-                    
+
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                         <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-sober-900 group-hover:bg-white transition-colors duration-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow relative z-10">
                             <div class="w-2 h-2 rounded-full bg-white group-hover:bg-sober-900 transition-colors"></div>
@@ -460,10 +255,7 @@
                             <p class="text-sober-300 font-light text-sm mb-4" data-i18n="expo_1">Rorarte, Italia. (Exposición Colectiva de artistas)</p>
                             <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
                                 <img src="img/Carlos Orellana (11).jpg" alt="" class="h-28 w-44 sm:h-36 sm:w-56 object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105">
-                                <div class="hidden">
-                                    <h3>Rorarte</h3>
-                                    <p>Exposición Colectiva, Italia (2025)</p>
-                                </div>
+                                <div class="hidden"><h3>Rorarte</h3><p>Exposición Colectiva, Italia (2025)</p></div>
                             </div>
                         </div>
                     </div>
@@ -478,10 +270,7 @@
                             <p class="text-sober-300 font-light text-sm mb-4" data-i18n="expo_2">Richmond TW9 LHP, United Kingdom. (Exposición Colectiva)</p>
                             <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
                                 <img src="img/Carlos Orellana (12).jpg" alt="" class="h-28 w-44 sm:h-36 sm:w-56 object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105">
-                                <div class="hidden">
-                                    <h3>Exhibición de Arte</h3>
-                                    <p>Exposición Colectiva, United Kingdom (2025)</p>
-                                </div>
+                                <div class="hidden"><h3>Exhibición de Arte</h3><p>Exposición Colectiva, United Kingdom (2025)</p></div>
                             </div>
                         </div>
                     </div>
@@ -496,10 +285,7 @@
                             <p class="text-sober-300 font-light text-sm mb-4" data-i18n="expo_3"></p>
                             <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
                                 <img src="img/Carlos Orellana (27).jpg" alt="" class="h-28 w-44 sm:h-36 sm:w-56 object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105">
-                                <div class="hidden">
-                                    <h3></h3>
-                                    <p>(2019)</p>
-                                </div>
+                                <div class="hidden"><h3></h3><p>(2019)</p></div>
                             </div>
                         </div>
                     </div>
@@ -511,13 +297,10 @@
                         <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:text-right">
                             <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest">2015</span>
                             <h3 class="font-serif text-2xl text-white mt-1 mb-2">Reportaje de prensa salvadoreña</h3>
-                            <p class="text-sober-300 font-light text-sm mb-4"> San Salvador, El Salvador. (Periodico Salvadoreño)</p>
+                            <p class="text-sober-300 font-light text-sm mb-4">San Salvador, El Salvador. (Periodico Salvadoreño)</p>
                             <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
                                 <img src="img/Carlos Orellana (34).jpg" alt="" class="h-28 w-44 sm:h-36 sm:w-56 object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105">
-                                <div class="hidden">
-                                    <h3>Arte hecho en Italia</h3>
-                                    <p>El Salvador (2021)</p>
-                                </div>
+                                <div class="hidden"><h3>Arte hecho en Italia</h3><p>El Salvador (2021)</p></div>
                             </div>
                         </div>
                     </div>
@@ -529,24 +312,24 @@
 
     <!-- Footer -->
     <footer class="bg-[#0a0a0a] border-t border-sober-800 py-12">
-    <div class="container mx-auto px-6 text-center">
-        <div class="font-serif text-2xl mb-6 text-white tracking-widest">Carlos Orellana</div>
-        <div class="flex justify-center space-x-8 mb-8">
-            <a href="https://www.instagram.com/carlos_orellana_art?igsh=aHBsNHJ6YnVlNG13&fbclid=IwY2xjawQr6GJleHRuA2FlbQIxMABicmlkETE3Vk1OWjNIR0kzWVRKZmVsc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHiaBBOA6Z8Fpuo_aCJIjsj32rrIDKN2t-W--r3uvGhZ_ZJLAq700gNnOBW0U_aem_47dr6euTjvMAeG_i8DqpbA" target="_blank" rel="noopener noreferrer" class="text-sober-300 hover:text-white transition-colors duration-200" aria-label="Instagram">
-                <i data-lucide="instagram" class="w-7 h-7"></i>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100092366961469" target="_blank" rel="noopener noreferrer" class="text-sober-300 hover:text-white transition-colors duration-200" aria-label="Facebook">
-                <i data-lucide="facebook" class="w-7 h-7"></i>
-            </a>
-            <a href="https://www.youtube.com/@carlosorellanart" target="_blank" rel="noopener noreferrer" class="text-sober-300 hover:text-white transition-colors duration-200" aria-label="YouTube">
-                <i data-lucide="youtube" class="w-7 h-7"></i>
-            </a>
+        <div class="container mx-auto px-6 text-center">
+            <div class="font-serif text-2xl mb-6 text-white tracking-widest">Carlos Orellana</div>
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://www.instagram.com/carlos_orellana_art?igsh=aHBsNHJ6YnVlNG13&fbclid=IwY2xjawQr6GJleHRuA2FlbQIxMABicmlkETE3Vk1OWjNIR0kzWVRKZmVsc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHiaBBOA6Z8Fpuo_aCJIjsj32rrIDKN2t-W--r3uvGhZ_ZJLAq700gNnOBW0U_aem_47dr6euTjvMAeG_i8DqpbA" target="_blank" rel="noopener noreferrer" class="text-sober-300 hover:text-white transition-colors duration-200" aria-label="Instagram">
+                    <i data-lucide="instagram" class="w-7 h-7"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100092366961469" target="_blank" rel="noopener noreferrer" class="text-sober-300 hover:text-white transition-colors duration-200" aria-label="Facebook">
+                    <i data-lucide="facebook" class="w-7 h-7"></i>
+                </a>
+                <a href="https://www.youtube.com/@carlosorellanart" target="_blank" rel="noopener noreferrer" class="text-sober-300 hover:text-white transition-colors duration-200" aria-label="YouTube">
+                    <i data-lucide="youtube" class="w-7 h-7"></i>
+                </a>
+            </div>
+            <p class="text-sober-300/50 text-sm font-light">
+                &copy; <span id="year"></span> Ing. Christian Rodas--Artista: Carlos Orellana. Todos los derechos reservados.
+            </p>
         </div>
-        <p class="text-sober-300/50 text-sm font-light">
-            &copy; <span id="year"></span> Ing. Christian Rodas--Artista: Carlos Orellana. Todos los derechos reservados.
-        </p>
-    </div>
-</footer>
+    </footer>
 
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8deba2637ae843d68a349cd613848782"}'></script>
 
