@@ -289,13 +289,14 @@ body {
 .lightbox-nav-next { right: 20px; }
 .lightbox-nav-next:hover { transform: translateY(-50%) translateX(2px); }
 
-/* Flechas: ocultas en móvil, visibles solo en desktop */
-@media (max-width: 767px) {
-    .lightbox-nav-btn { display: none; }
+/* Flechas: ocultas en táctil (móvil/tablet portrait y landscape), visibles solo en desktop con mouse */
+@media (hover: none) {
+    .lightbox-nav-btn { display: none !important; }
     .lightbox-stage   { padding: 8px 16px; }
+    .lightbox-main-img { max-height: 65vh; }
 }
 
-@media (min-width: 768px) {
+@media (hover: hover) {
     .lightbox-nav-prev { left: 32px; }
     .lightbox-nav-next { right: 32px; }
     .lightbox-stage    { padding: 8px 112px; }
