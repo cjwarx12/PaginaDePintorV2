@@ -37,8 +37,8 @@ const translations = {
         works_title: "Obras Selectas", works_desc: "Un recorrido visual por las piezas más representativas de la última década.",
         expo_title: "Exposiciones Destacadas",
         expo_1: "Rorarte, Italia. (Exposición Colectiva de artistas)",
-        expo_2: "Richmond TW9 LHP, Reino Unido. (Exposición Colectiva)",
-        expo_3: "",
+        expo_2: "Universidad de Boloña",
+        expo_3: "Braga",
         expo_4: "San Salvador, El Salvador. (Periódico Salvadoreño)",
         obra_01_title: "Albedrio",
         obra_02_title: "Amor En Salida",
@@ -76,8 +76,8 @@ const translations = {
         works_title: "Selected Artworks", works_desc: "A visual journey through the most representative pieces of the last decade.",
         expo_title: "Featured Exhibitions",
         expo_1: "Rorarte, Italy. (Collective Exhibition)",
-        expo_2: "Richmond TW9 LHP, United Kingdom. (Collective Exhibition)",
-        expo_3: "",
+        expo_2: "University of Bologna",
+        expo_3: "Braga",
         expo_4: "San Salvador, El Salvador. (Salvadoran Newspaper)",
         obra_01_title: "Free Will",
         obra_02_title: "Love in Exit",
@@ -115,8 +115,8 @@ const translations = {
         works_title: "Opere Selezionate", works_desc: "Un viaggio visivo attraverso le opere più rappresentative dell'ultimo decennio.",
         expo_title: "Mostre in Evidenza",
         expo_1: "Rorarte, Italia. (Mostra Collettiva di artisti)",
-        expo_2: "Richmond TW9 LHP, Regno Unito. (Mostra Collettiva)",
-        expo_3: "",
+        expo_2: "Università di Bologna",
+        expo_3: "Braga",
         expo_4: "San Salvador, El Salvador. (Giornale Salvadoregno)",
         obra_01_title: "Libero Arbitrio",
         obra_02_title: "Amore in Uscita",
@@ -145,10 +145,14 @@ const translations = {
     }
 };
 
+/* FIX 2: No sobreescribir si el valor está vacío */
 function changeLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang]?.[key]) el.innerText = translations[lang][key];
+        const value = translations[lang]?.[key];
+        if (value !== undefined && value !== '') {
+            el.innerText = value;
+        }
     });
     ['es','en','it'].forEach(l => document.getElementById(`btn-${l}`).classList.remove('lang-active'));
     document.getElementById(`btn-${lang}`).classList.add('lang-active');
@@ -194,7 +198,7 @@ document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click
 
 
 /* ================================================================
-   MASONRY — calcula grid-row-end para cada item según su altura
+   MASONRY
    ================================================================ */
 const masonryGallery = document.getElementById('obras-gallery');
 
@@ -245,11 +249,9 @@ window.addEventListener('orientationchange', () => {
 });
 
 
-
 /* ================================================================
-   LIGHTBOX — galerías separadas por data-gallery
+   LIGHTBOX
    ================================================================ */
-
 const lightbox        = document.getElementById('lightbox');
 const lightboxImg     = document.getElementById('lightbox-img');
 const lightboxTitle   = document.getElementById('lightbox-title');
