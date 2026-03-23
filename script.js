@@ -19,8 +19,10 @@ tailwind.config = {
     }
 }
 
-lucide.createIcons();
-document.getElementById('year').textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+});
 
 /* --- DICCIONARIO DE TRADUCCIÓN --- */
 const translations = {
