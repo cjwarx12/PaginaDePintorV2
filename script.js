@@ -1,26 +1,16 @@
-//-- Configuración personalizada de Tailwind --//
-tailwind.config = {
-    theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                serif: ['Playfair Display', 'serif'],
-            },
-            colors: {
-                sober: {
-                    900: '#121212',
-                    800: '#1e1e1e',
-                    300: '#d4d4d8',
-                    100: '#f4f4f5',
-                    accent: '#8c7e6a'
-                }
-            }
-        }
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
+    // Ejecutar lucide después de un pequeño delay para asegurar que está listo
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+    
+    // Reintentar si no está listo
+    setTimeout(() => {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }, 100);
+    
     document.getElementById('year').textContent = new Date().getFullYear();
 });
 
@@ -317,7 +307,11 @@ function openLightbox(element) {
     void lightbox.offsetWidth;
     lightbox.style.opacity = '1';
     toggleBodyScroll(true);
-    lucide.createIcons();
+    
+    // Ejecutar lucide con verificación
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 }
 
 function closeLightbox() {

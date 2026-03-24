@@ -25,7 +25,28 @@
         <link rel="stylesheet" href="styles.css"/>
         
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'],
+                            serif: ['Playfair Display', 'serif'],
+                        },
+                        colors: {
+                            sober: {
+                                900: '#121212',
+                                800: '#1e1e1e',
+                                300: '#d4d4d8',
+                                100: '#f4f4f5',
+                                accent: '#8c7e6a'
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -233,7 +254,7 @@
                             <div class="w-2 h-2 rounded-full bg-white group-hover:bg-sober-900 transition-colors"></div>
                         </div>
                         <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:text-right">
-                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest"></span>
+                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest">2025</span>
                             <h3 class="font-serif text-2xl text-white mt-1 mb-2">Rorarte</h3>
                             <p class="text-sober-300 font-light text-sm mb-4" data-i18n="expo_1">Rorarte, Italia. (Exposición Colectiva de artistas)</p>
                             <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
@@ -248,7 +269,7 @@
                             <div class="w-2 h-2 rounded-full bg-sober-800 group-hover:bg-white transition-colors"></div>
                         </div>
                         <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:text-right">
-                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest"></span>
+                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest">2024</span>
                             <h3 class="font-serif text-2xl text-white mt-1 mb-2">Exhibición de Arte</h3>
                             <p class="text-sober-300 font-light text-sm mb-4" data-i18n="expo_2">Universidad de Boloña</p>
                             <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
@@ -263,7 +284,7 @@
                             <div class="w-2 h-2 rounded-full bg-sober-800 group-hover:bg-white transition-colors"></div>
                         </div>
                         <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:text-right">
-                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest"></span>
+                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest">2023</span>
                             <h3 class="font-serif text-2xl text-white mt-1 mb-2">Exhibición de Arte</h3>
                             <p class="text-sober-300 font-light text-sm mb-4" data-i18n="expo_3">Braga</p>
                             <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
@@ -278,7 +299,7 @@
                             <div class="w-2 h-2 rounded-full bg-sober-800 group-hover:bg-white transition-colors"></div>
                         </div>
                         <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] pl-4 md:pl-0 md:group-odd:text-right">
-                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest"></span>
+                            <span class="text-sober-accent text-sm font-semibold uppercase tracking-widest">2021</span>
                             <h3 class="font-serif text-2xl text-white mt-1 mb-2">Reportaje de prensa salvadoreña</h3>
                             <p class="text-sober-300 font-light text-sm mb-4" data-i18n="expo_4">San Salvador, El Salvador. (Periódico Salvadoreño)</p>
                             <div class="inline-block overflow-hidden rounded-sm border border-white/5 shadow-xl cursor-pointer gallery-item" data-gallery="exposiciones" onclick="openLightbox(this)">
@@ -299,13 +320,13 @@
             <div class="font-serif text-2xl mb-6 text-white tracking-widest">Carlos Orellana</div>
             <div class="flex justify-center space-x-8 mb-8">
                 <a href="https://www.instagram.com/carlos_orellana_art?igsh=aHBsNHJ6YnVlNG13&fbclid=IwY2xjawQr6GJleHRuA2FlbQIxMABicmlkETE3Vk1OWjNIR0kzWVRKZmVsc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHiaBBOA6Z8Fpuo_aCJIjsj32rrIDKN2t-W--r3uvGhZ_ZJLAq700gNnOBW0U_aem_47dr6euTjvMAeG_i8DqpbA" target="_blank" rel="noopener noreferrer" class="text-sober-300 hover:text-white transition-colors duration-200" aria-label="Instagram">
-                    <i data-lucide="instagram" class="w-7 h-7"></i>
+                    <svg class="w-7 h-7 inline-block" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=100092366961469" target="_blank" rel="noopener noreferrer" class="text-sober-300 hover:text-white transition-colors duration-200" aria-label="Facebook">
-                    <i data-lucide="facebook" class="w-7 h-7"></i>
+                    <svg class="w-7 h-7 inline-block" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
                 <a href="https://www.youtube.com/@carlosorellanart" target="_blank" rel="noopener noreferrer" class="text-sober-300 hover:text-white transition-colors duration-200" aria-label="YouTube">
-                    <i data-lucide="youtube" class="w-7 h-7"></i>
+                    <svg class="w-7 h-7 inline-block" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
             </div>
             <p class="text-sober-300/50 text-sm font-light">
