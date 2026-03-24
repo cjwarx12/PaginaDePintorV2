@@ -3,14 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
-    
+
     // Reintentar si no está listo
     setTimeout(() => {
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
     }, 100);
-    
+
     document.getElementById('year').textContent = new Date().getFullYear();
 });
 
@@ -144,7 +144,7 @@ function changeLanguage(lang) {
             el.innerText = value;
         }
     });
-    ['es','en','it'].forEach(l => document.getElementById(`btn-${l}`).classList.remove('lang-active'));
+    ['es', 'en', 'it'].forEach(l => document.getElementById(`btn-${l}`).classList.remove('lang-active'));
     document.getElementById(`btn-${lang}`).classList.add('lang-active');
 }
 
@@ -152,32 +152,32 @@ function changeLanguage(lang) {
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        navbar.classList.remove('bg-transparent','py-4');
-        navbar.classList.add('bg-sober-900/95','backdrop-blur-md','py-3','shadow-lg','border-b','border-white/5');
+        navbar.classList.remove('bg-transparent', 'py-4');
+        navbar.classList.add('bg-sober-900/95', 'backdrop-blur-md', 'py-3', 'shadow-lg', 'border-b', 'border-white/5');
     } else {
-        navbar.classList.add('bg-transparent','py-4');
-        navbar.classList.remove('bg-sober-900/95','backdrop-blur-md','py-3','shadow-lg','border-b','border-white/5');
+        navbar.classList.add('bg-transparent', 'py-4');
+        navbar.classList.remove('bg-sober-900/95', 'backdrop-blur-md', 'py-3', 'shadow-lg', 'border-b', 'border-white/5');
     }
 });
 
 /* --- Menú móvil --- */
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu    = document.getElementById('mobile-menu');
+const mobileMenu = document.getElementById('mobile-menu');
 let isMenuOpen = false;
 
 function toggleMobileMenu() {
     isMenuOpen = !isMenuOpen;
-    const iconMenu  = document.getElementById('icon-menu');
+    const iconMenu = document.getElementById('icon-menu');
     const iconClose = document.getElementById('icon-close');
     if (isMenuOpen) {
-        mobileMenu.classList.remove('opacity-0','pointer-events-none');
-        mobileMenu.classList.add('opacity-100','pointer-events-auto');
+        mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+        mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
         iconMenu?.classList.add('hidden');
         iconClose?.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
     } else {
-        mobileMenu.classList.add('opacity-0','pointer-events-none');
-        mobileMenu.classList.remove('opacity-100','pointer-events-auto');
+        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
         iconMenu?.classList.remove('hidden');
         iconClose?.classList.add('hidden');
         document.body.style.overflow = '';
@@ -196,9 +196,9 @@ function resizeMasonryItem(item) {
     if (!masonryGallery) return;
     item.style.gridRowEnd = '';
     const rowHeight = parseInt(window.getComputedStyle(masonryGallery).getPropertyValue('grid-auto-rows'));
-    const rowGap    = parseInt(window.getComputedStyle(masonryGallery).getPropertyValue('row-gap') ||
-                               window.getComputedStyle(masonryGallery).getPropertyValue('grid-row-gap')) || 14;
-    const content   = item.querySelector('.content');
+    const rowGap = parseInt(window.getComputedStyle(masonryGallery).getPropertyValue('row-gap') ||
+        window.getComputedStyle(masonryGallery).getPropertyValue('grid-row-gap')) || 14;
+    const content = item.querySelector('.content');
     if (!content) return;
     const contentHeight = content.getBoundingClientRect().height;
     if (contentHeight > 0) {
@@ -242,24 +242,24 @@ window.addEventListener('orientationchange', () => {
 /* ================================================================
    LIGHTBOX
    ================================================================ */
-const lightbox        = document.getElementById('lightbox');
-const lightboxImg     = document.getElementById('lightbox-img');
-const lightboxTitle   = document.getElementById('lightbox-title');
-const lightboxDesc    = document.getElementById('lightbox-desc');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxTitle = document.getElementById('lightbox-title');
+const lightboxDesc = document.getElementById('lightbox-desc');
 const lightboxCounter = document.getElementById('lightbox-counter');
-const lightboxThumbs  = document.getElementById('lightbox-thumbnails');
+const lightboxThumbs = document.getElementById('lightbox-thumbnails');
 
 let currentImageIndex = 0;
-let galleryItems      = [];
-let isAnimating       = false;
+let galleryItems = [];
+let isAnimating = false;
 
 function buildThumbnails() {
     lightboxThumbs.innerHTML = '';
     galleryItems.forEach((item, index) => {
-        const src   = item.querySelector('img').src;
+        const src = item.querySelector('img').src;
         const thumb = document.createElement('img');
-        thumb.src   = src;
-        thumb.alt   = '';
+        thumb.src = src;
+        thumb.alt = '';
         thumb.className = 'lb-thumb';
         thumb.addEventListener('click', e => {
             e.stopPropagation();
@@ -277,10 +277,10 @@ function syncThumbs() {
 
 function updateLightboxContent(animate = false) {
     if (!galleryItems.length) return;
-    const item  = galleryItems[currentImageIndex];
-    const src   = item.querySelector('img').src;
+    const item = galleryItems[currentImageIndex];
+    const src = item.querySelector('img').src;
     const title = item.querySelector('h3').innerText;
-    const desc  = item.querySelector('p').innerText;
+    const desc = item.querySelector('p').innerText;
     lightboxCounter.innerText = `${currentImageIndex + 1} / ${galleryItems.length}`;
     syncThumbs();
     if (animate && !isAnimating) {
@@ -307,7 +307,7 @@ function openLightbox(element) {
     void lightbox.offsetWidth;
     lightbox.style.opacity = '1';
     toggleBodyScroll(true);
-    
+
     // Ejecutar lucide con verificación
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
@@ -334,7 +334,7 @@ function nextImage(e) {
 
 let touchStartX = 0, touchEndX = 0;
 lightbox.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-lightbox.addEventListener('touchend',   e => { touchEndX   = e.changedTouches[0].screenX; handleSwipe(); }, { passive: true });
+lightbox.addEventListener('touchend', e => { touchEndX = e.changedTouches[0].screenX; handleSwipe(); }, { passive: true });
 function handleSwipe() {
     if (touchEndX < touchStartX - 50) nextImage();
     if (touchEndX > touchStartX + 50) prevImage();
@@ -343,8 +343,55 @@ function handleSwipe() {
 lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('hidden')) {
-        if (e.key === 'Escape')     closeLightbox();
+        if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowRight') nextImage();
-        if (e.key === 'ArrowLeft')  prevImage();
+        if (e.key === 'ArrowLeft') prevImage();
     }
 });
+
+/* --- LÓGICA DE GALERÍA HEXAGONAL (HOVER Y CLICK PARA CERRAR) --- */
+const hexImagesList = document.querySelectorAll('.hex-gallery > img');
+
+hexImagesList.forEach(img => {
+    let isTouch = false;
+
+    // Detectamos si es celular/tablet para no confundir el toque con el mouse
+    img.addEventListener('touchstart', () => { isTouch = true; }, { passive: true });
+
+    // COMPU: Expandir al pasar el mouse (si no la cerramos antes con un clic)
+    img.addEventListener('mouseenter', function () {
+        if (isTouch) return;
+        if (!this.classList.contains('fuerza-cierre')) {
+            this.classList.add('zoom-activo');
+        }
+    });
+
+    // COMPU: Limpiar variables al sacar el ratón
+    img.addEventListener('mouseleave', function () {
+        if (isTouch) return;
+        this.classList.remove('zoom-activo', 'fuerza-cierre');
+    });
+
+    // COMPU Y MÓVIL: Qué hacer cuando haces clic o tocas la imagen
+    img.addEventListener('click', function (e) {
+        if (this.classList.contains('zoom-activo')) {
+            // 🛑 Si ya está grande, la hacemos chiquita de golpe
+            this.classList.remove('zoom-activo');
+            this.classList.add('fuerza-cierre'); // Impide que vuelva a abrirse si el mouse sigue encima
+        } else {
+            // 🟢 Si estaba chica, recogemos todas las demás y abrimos esta
+            hexImagesList.forEach(i => i.classList.remove('zoom-activo', 'fuerza-cierre'));
+            this.classList.add('zoom-activo');
+        }
+
+        setTimeout(() => { isTouch = false; }, 300); // Reset del toque táctil
+    });
+});
+
+// Función extra: Si en celular tocan cualquier parte vacía de la pantalla, se guarda la imagen
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.hex-gallery')) {
+        hexImagesList.forEach(img => img.classList.remove('zoom-activo'));
+    }
+});
+

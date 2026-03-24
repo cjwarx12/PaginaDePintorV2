@@ -4,10 +4,22 @@ body {
     color: #f4f4f5;
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #121212; }
-::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #52525b; }
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+}
 
 .lang-active {
     color: #ffffff;
@@ -28,7 +40,7 @@ body {
     transform-origin: center center;
 }
 
-.hex-gallery > img {
+.hex-gallery>img {
     grid-area: 1/1;
     width: var(--s);
     aspect-ratio: 1.15;
@@ -37,33 +49,59 @@ body {
     transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
     cursor: pointer;
     filter: grayscale(80%);
-    transition: filter 0.3s ease, transform 0.3s ease;
+    transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.hex-gallery > img:hover {
+.hex-gallery>img.zoom-activo {
+
     filter: grayscale(0);
-    z-index: 1;
-    --_t: 1.12;
+    z-index: 10;
+    /* La colocamos por encima de absolutamente todas las demás */
+
+    /* 1. Hace que crezca muchísimo para abarcar el panal. 
+          Puedes probar ponerle 2.8 o 3.0 si quieres que sea aún más grande */
+    --_t: 2.6 !important;
+
+    /* 2. Obliga a que la imagen se mueva al centro perfecto del panal al crecer */
+    --_x: 0px !important;
+    --_y: 0px !important;
 }
 
-.hex-gallery > img:nth-child(1) { --_y: calc(-100% - var(--g)); }
-.hex-gallery > img:nth-child(7) { --_y: calc( 100% + var(--g)); }
 
-.hex-gallery > img:nth-child(3),
-.hex-gallery > img:nth-child(5) { --_x: calc(-75% - .87 * var(--g)); }
+.hex-gallery>img:nth-child(1) {
+    --_y: calc(-100% - var(--g));
+}
 
-.hex-gallery > img:nth-child(4),
-.hex-gallery > img:nth-child(6) { --_x: calc( 75% + .87 * var(--g)); }
+.hex-gallery>img:nth-child(7) {
+    --_y: calc(100% + var(--g));
+}
 
-.hex-gallery > img:nth-child(3),
-.hex-gallery > img:nth-child(4) { --_y: calc(-50% - .5 * var(--g)); }
+.hex-gallery>img:nth-child(3),
+.hex-gallery>img:nth-child(5) {
+    --_x: calc(-75% - .87 * var(--g));
+}
 
-.hex-gallery > img:nth-child(5),
-.hex-gallery > img:nth-child(6) { --_y: calc( 50% + .5 * var(--g)); }
+.hex-gallery>img:nth-child(4),
+.hex-gallery>img:nth-child(6) {
+    --_x: calc(75% + .87 * var(--g));
+}
+
+.hex-gallery>img:nth-child(3),
+.hex-gallery>img:nth-child(4) {
+    --_y: calc(-50% - .5 * var(--g));
+}
+
+.hex-gallery>img:nth-child(5),
+.hex-gallery>img:nth-child(6) {
+    --_y: calc(50% + .5 * var(--g));
+}
 
 /* Tablet */
 @media (max-width: 1023px) {
-    .hex-gallery { --s: 110px; --g: 7px; }
+    .hex-gallery {
+        --s: 110px;
+        --g: 7px;
+    }
 }
 
 /* Móvil: FIX 5 — reducir scale para evitar overflow */
@@ -115,6 +153,7 @@ body {
         grid-column-gap: 8px;
         grid-row-gap: 8px;
     }
+
     .obras-wall .container {
         padding-left: 12px;
         padding-right: 12px;
@@ -153,7 +192,7 @@ body {
     display: block;
     border-radius: 8px;
     box-shadow:
-        0 4px 8px  rgba(0, 0, 0, 0.55),
+        0 4px 8px rgba(0, 0, 0, 0.55),
         0 12px 28px rgba(0, 0, 0, 0.50),
         0 24px 48px rgba(0, 0, 0, 0.35);
     transition: box-shadow 0.5s ease;
@@ -161,7 +200,7 @@ body {
 
 .masonry-gallery .gallery-item:hover .content img {
     box-shadow:
-        0 8px 16px  rgba(0, 0, 0, 0.65),
+        0 8px 16px rgba(0, 0, 0, 0.65),
         0 20px 45px rgba(0, 0, 0, 0.60),
         0 36px 70px rgba(0, 0, 0, 0.45);
 }
@@ -173,7 +212,7 @@ body {
     right: 4px;
     border-radius: 0 0 8px 8px;
     padding: 32px 10px 8px;
-    background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.90) 0%, transparent 100%);
     opacity: 0;
     transition: opacity 0.35s ease;
     pointer-events: none;
@@ -181,11 +220,15 @@ body {
 }
 
 @media (min-width: 768px) {
-    .masonry-gallery .gallery-item:hover .obra-overlay { opacity: 1; }
+    .masonry-gallery .gallery-item:hover .obra-overlay {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 767px) {
-    .obra-overlay { opacity: 1; }
+    .obra-overlay {
+        opacity: 1;
+    }
 }
 
 .obra-overlay h3 {
@@ -202,16 +245,24 @@ body {
 .obra-overlay p {
     font-family: 'Inter', sans-serif;
     font-size: 0.6rem;
-    color: rgba(212,212,216,0.75);
+    color: rgba(212, 212, 216, 0.75);
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
 
 @media (max-width: 479px) {
-    .obra-overlay         { padding: 28px 8px 6px; }
-    .obra-overlay h3      { font-size: 0.75rem; }
-    .obra-overlay p       { font-size: 0.55rem; }
+    .obra-overlay {
+        padding: 28px 8px 6px;
+    }
+
+    .obra-overlay h3 {
+        font-size: 0.75rem;
+    }
+
+    .obra-overlay p {
+        font-size: 0.55rem;
+    }
 }
 
 /* ================================================================
@@ -231,14 +282,14 @@ body {
     justify-content: space-between;
     padding: 18px 28px;
     z-index: 40;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
 }
 
 .lightbox-brand {
     font-family: 'Playfair Display', serif;
     font-size: 0.85rem;
     letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255, 255, 255, 0.35);
     pointer-events: none;
 }
 
@@ -247,7 +298,7 @@ body {
     font-size: 0.7rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255, 255, 255, 0.3);
     pointer-events: none;
 }
 
@@ -258,16 +309,17 @@ body {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.04);
-    color: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.55);
     cursor: pointer;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
+
 .lightbox-close-btn:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: #fff;
-    border-color: rgba(255,255,255,0.3);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .lightbox-stage {
@@ -296,7 +348,7 @@ body {
     height: auto;
     object-fit: contain;
     border-radius: 2px;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.04);
     transition: opacity 0.22s ease, transform 0.22s ease;
 }
 
@@ -316,32 +368,61 @@ body {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.04);
-    color: rgba(255,255,255,0.45);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.45);
     cursor: pointer;
     transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
 }
+
 .lightbox-nav-btn:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: #fff;
-    border-color: rgba(255,255,255,0.25);
+    border-color: rgba(255, 255, 255, 0.25);
 }
-.lightbox-nav-prev { left: 20px; }
-.lightbox-nav-prev:hover { transform: translateY(-50%) translateX(-2px); }
-.lightbox-nav-next { right: 20px; }
-.lightbox-nav-next:hover { transform: translateY(-50%) translateX(2px); }
+
+.lightbox-nav-prev {
+    left: 20px;
+}
+
+.lightbox-nav-prev:hover {
+    transform: translateY(-50%) translateX(-2px);
+}
+
+.lightbox-nav-next {
+    right: 20px;
+}
+
+.lightbox-nav-next:hover {
+    transform: translateY(-50%) translateX(2px);
+}
 
 @media (pointer: coarse) {
-    .lightbox-nav-btn  { display: none !important; }
-    .lightbox-stage    { padding: 8px 16px !important; }
-    .lightbox-main-img { max-height: 65vh; }
+    .lightbox-nav-btn {
+        display: none !important;
+    }
+
+    .lightbox-stage {
+        padding: 8px 16px !important;
+    }
+
+    .lightbox-main-img {
+        max-height: 65vh;
+    }
 }
 
 @media (pointer: fine) {
-    .lightbox-nav-prev { left: 32px; }
-    .lightbox-nav-next { right: 32px; }
-    .lightbox-stage    { padding: 8px 112px; }
+    .lightbox-nav-prev {
+        left: 32px;
+    }
+
+    .lightbox-nav-next {
+        right: 32px;
+    }
+
+    .lightbox-stage {
+        padding: 8px 112px;
+    }
 }
 
 .lightbox-caption-bar {
@@ -359,14 +440,14 @@ body {
     color: #ffffff;
     font-weight: 400;
     letter-spacing: 0.02em;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8);
     margin: 0 0 4px;
 }
 
 .lightbox-desc {
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
-    color: rgba(212,212,216,0.80);
+    color: rgba(212, 212, 216, 0.80);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-weight: 300;
@@ -378,7 +459,7 @@ body {
     position: relative;
     width: 100%;
     padding: 8px 24px 16px;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
 }
 
 .lightbox-filmstrip {
@@ -391,7 +472,10 @@ body {
     -ms-overflow-style: none;
     padding-bottom: 2px;
 }
-.lightbox-filmstrip::-webkit-scrollbar { display: none; }
+
+.lightbox-filmstrip::-webkit-scrollbar {
+    display: none;
+}
 
 .lb-thumb {
     flex-shrink: 0;
@@ -404,7 +488,12 @@ body {
     border: 1.5px solid transparent;
     transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
-.lb-thumb:hover { opacity: 0.7; transform: translateY(-2px); }
+
+.lb-thumb:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
 .lb-thumb--active {
     opacity: 1 !important;
     border-color: #8c7e6a;
@@ -412,5 +501,8 @@ body {
 }
 
 @media (max-width: 480px) {
-    .lb-thumb { width: 42px; height: 32px; }
+    .lb-thumb {
+        width: 42px;
+        height: 32px;
+    }
 }
